@@ -1,0 +1,14 @@
+@mixin Main-grid($columns, $row) {
+    display: grid;
+    grid-auto-flow: dense;
+    grid-template-columns: repeat($columns, 1fr);
+    grid-template-rows: repeat($row, 1fr);
+    grid-gap: 0px;
+}
+@mixin additional-grid($columns, $row) {
+    display: grid;
+    grid-auto-flow: dense;
+    grid-template-columns: repeat($columns, 1fr);
+    grid-template-rows: repeat($row, 50px);
+    grid-gap: 0px;
+}

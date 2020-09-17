@@ -1,0 +1,25 @@
+.collection-header {
+    position: relative;
+    &__previous {
+        display: inline-block;
+        position: absolute;
+        top: 20px;
+        left: 50px;
+        cursor: pointer;
+        vertical-align: top;
+        & i {
+            pointer-events: none;
+        }
+    }
+    &__next {
+        display: inline-block;
+        position: absolute;
+        top: 20px;
+        right: 50px;
+        cursor: pointer;
+        vertical-align: top;
+        & i {
+            pointer-events: none;
+        }
+    }
+}

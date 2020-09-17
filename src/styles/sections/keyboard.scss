@@ -1,0 +1,57 @@
+@import "../global/mixsin.scss";
+
+.keyboard {
+    @include Main-grid(1, 5);
+    &__container-digits {
+        @include additional-grid(15, 1);
+    }
+    &__container-first-letters-line {
+        @include additional-grid(15, 1);
+    }
+    &__container-second-letters-line {
+        @include additional-grid(14, 1);
+    }
+    &__container-thitd-letters-line {
+        @include additional-grid(15, 1);
+    }
+    &__container-service-buttons {
+        @include additional-grid(10, 1);
+    }
+    &__item {
+        text-align: center;
+        color: #fff;
+        background: #0c2835;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        font-size: 1.2rem;
+        line-height: 50px;
+        &-double-width {
+            grid-column: span 2;
+            color: #fff;
+            background: #0c2835;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            text-align: center;
+            font-size: 1.2rem;
+            line-height: 50px;
+            cursor: pointer;
+            &:active {
+                background: #74ff3b;
+                color: #111;
+            }
+        }
+        &-space-bar {
+            grid-column: span 8;
+            color: #fff;
+            background: #0c2835;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            text-align: center;
+            font-size: 1.2rem;
+            line-height: 50px;
+            cursor: pointer;
+            &:active {
+                background: #74ff3b;
+                color: #111;
+            }
+        }
+    }
+}

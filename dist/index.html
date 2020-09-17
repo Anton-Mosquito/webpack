@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Practice tutorial</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body class="blue lighten-4">
+    <main class="container">
+      <section class="row">
+        <h3 class="center-align">Figures calculator</h3>
+        <form action="" class="col s12">
+          <div class="row">
+            <h5 class="center valign-wrapper">
+              Enter the value into fields
+              <i class="medium material-icons">arrow_downward</i>
+            </h5>
+            <div class="input-field col s8">
+              <input id="dataSide" type="text" class="validate" />
+              <label for="dataSide" class="black-text"
+                >Enter the side of the square</label
+              >
+            </div>
+            <a
+              class="waves-effect waves-teal btn-flat col s2 center-align btn-large"
+              id="calculatePerimetr"
+              >Calculate P</a
+            >
+            <a
+              class="waves-effect waves-teal btn-flat col s2 center-align btn-large"
+              id="calculateSquare"
+              >Calculate S</a
+            >
+            <div class="input-field col s6">
+              <input
+                disabled
+                id="resultCalculatePerimetr"
+                type="text"
+                class="validate black-text"
+                placeholder="result"
+              />
+              <label for="resultCalculatePerimetr">Perimetr of square</label>
+            </div>
+            <div class="input-field col s6">
+              <input
+                disabled
+                id="resultCalculateSquare"
+                type="text"
+                class="validate black-text"
+                placeholder="result"
+              />
+              <label for="resultCalculateSquare">Square of square</label>
+            </div>
+          </div>
+        </form>
+        <form action="" class="col s12">
+          <div class="row">
+            <h5 class="center valign-wrapper">
+              Enter the value into fields
+              <i class="medium material-icons">arrow_downward</i>
+            </h5>
+            <div class="input-field col s4">
+              <input id="dataSideOfRect1" type="text" class="validate" />
+              <label for="dataSideOfRect1" class="black-text"
+                >Enter the side of the rectungle</label
+              >
+            </div>
+            <div class="input-field col s4">
+              <input id="dataSideOfRect2" type="text" class="validate" />
+              <label for="dataSideOfRect2" class="black-text"
+                >Enter the another side of the rectungle</label
+              >
+            </div>
+            <a
+              class="waves-effect waves-teal btn-flat col s2 center-align btn-large"
+              id="calculatePerimetrofRectungle"
+              >Calculate P</a
+            >
+            <a
+              class="waves-effect waves-teal btn-flat col s2 center-align btn-large"
+              id="calculateSquareofRectungle"
+              >Calculate S</a
+            >
+            <div class="input-field col s6">
+              <input
+                disabled
+                id="resultCalculatePerimetrOfRect"
+                type="text"
+                class="validate black-text"
+                placeholder="result"
+              />
+              <label for="resultCalculatePerimetrOfRect"
+                >Perimetr of rectungle</label
+              >
+            </div>
+            <div class="input-field col s6">
+              <input
+                disabled
+                id="resultCalculateSquareOfRect"
+                type="text"
+                class="validate black-text"
+                placeholder="result"
+              />
+              <label for="resultCalculateSquareOfRect"
+                >Square of rectangle</label
+              >
+            </div>
+          </div>
+        </form>
+        <form action="" class="col s12">
+          <div class="row">
+            <h5 class="center valign-wrapper">
+              Enter the value into fields
+              <i class="medium material-icons">arrow_downward</i>
+            </h5>
+            <div class="input-field col s8">
+              <input id="dataOfCercle" type="text" class="validate" />
+              <label for="dataOfCercle" class="black-text"
+                >Enter the radius of the cercle</label
+              >
+            </div>
+            <a
+              class="waves-effect waves-teal btn-flat col s2 center-align btn-large"
+              id="calculateSquareOfCercle"
+              >Calculate P</a
+            >
+            <a
+              class="waves-effect waves-teal btn-flat col s2 center-align btn-large"
+              id="calculateСircumference"
+              >Calculate S</a
+            >
+            <div class="input-field col s6">
+              <input
+                disabled
+                id="resultCalculateSquareOfCercle"
+                type="text"
+                class="validate black-text"
+                placeholder="result"
+              />
+              <label for="resultCalculatePerimetr">Square of cercle</label>
+            </div>
+            <div class="input-field col s6">
+              <input
+                disabled
+                id="resultCalculateСircumference"
+                type="text"
+                class="validate black-text"
+                placeholder="result"
+              />
+              <label for="resultCalculateSquare">Сircumference</label>
+            </div>
+          </div>
+        </form>
+        <form action="" class="col s12">
+          <div class="row">
+            <h5 class="center valign-wrapper">
+              Enter the value into fields
+              <i class="medium material-icons">arrow_downward</i>
+            </h5>
+            <div class="input-field col s3">
+              <input id="dataOfTriangle" type="text" class="validate" />
+              <label for="dataOfTriangle" class="black-text"
+                >Enter the first side of triangle</label
+              >
+            </div>
+            <div class="input-field col s3">
+              <input id="dataOfTriangle1" type="text" class="validate" />
+              <label for="dataOfTriangle1" class="black-text"
+                >Enter the second side of triangle</label
+              >
+            </div>
+            <div class="input-field col s3">
+              <input id="dataOfTriangle2" type="text" class="validate" />
+              <label for="dataOfTriangle2" class="black-text"
+                >Enter the third side of triangle</label
+              >
+            </div>
+            <a
+              class="waves-effect waves-teal btn-flat col s3 center-align btn-large"
+              id="calculateTriangle"
+              >Calculate</a
+            >
+            <div class="input-field col s12">
+              <input
+                disabled
+                id="resultCalculateTriangle"
+                type="text"
+                class="validate black-text"
+                placeholder="result"
+              />
+              <label for="resultCalculateTriangle">Square of triangle</label>
+            </div>
+          </div>
+        </form>
+      </section>
+      <section class="row">
+        <h3 class="center-align">JavaScript math calculators</h3>
+        <form action="" class="col s12">
+          <div class="row">
+            <h5 class="center valign-wrapper">
+              Enter the value into fields, don't forget! You should enter the
+              signed value <i class="medium material-icons">arrow_downward</i>
+            </h5>
+            <div class="input-field col s2">
+              <input id="dataOfA" type="text" class="validate" />
+              <label for="dataOfA" class="black-text">a</label>
+            </div>
+            <span class="col s1">x<sup>2</sup></span>
+            <div class="input-field col s2">
+              <input id="dataOfB" type="text" class="validate" />
+              <label for="dataOfB" class="black-text">b</label>
+            </div>
+            <span class="col s1">x</span>
+            <div class="input-field col s2">
+              <input id="dataOfC" type="text" class="validate" />
+              <label for="dataOfC" class="black-text">c</label>
+            </div>
+            <a
+              class="waves-effect waves-teal btn-flat col s2 offset-s1 center-align btn-large"
+              id="calcQuadratic"
+              >Calculate</a
+            >
+            <div class="input-field col s12">
+              <input
+                disabled
+                id="resultquadratic"
+                type="text"
+                class="validate black-text"
+                placeholder="result"
+              />
+              <label for="resultquadratic">Result of quadratic education</label>
+            </div>
+          </div>
+        </form>
+        <form action="" class="col s12">
+          <div class="row">
+            <h5 class="center valign-wrapper">
+              Enter the value into fields<i class="medium material-icons"
+                >arrow_downward</i
+              >
+            </h5>
+            <div class="input-field col s3">
+              <input id="dataOfFirstDigit" type="text" class="validate" />
+              <label for="dataOfFirstDigit" class="black-text"
+                >First numbr</label
+              >
+            </div>
+            <div class="input-field col s3">
+              <input id="dataOfSecondDigit" type="text" class="validate" />
+              <label for="dataOfSecondDigit" class="black-text"
+                >Second number</label
+              >
+            </div>
+            <div class="input-field col s3">
+              <input id="dataOfThirdDigit" type="text" class="validate" />
+              <label for="dataOfThirdDigit" class="black-text"
+                >Third number</label
+              >
+            </div>
+            <a
+              class="waves-effect waves-teal btn-flat col s3 center-align btn-large"
+              id="calcDigitsOFPifagor"
+              >Calculate</a
+            >
+            <div class="input-field col s12">
+              <input
+                disabled
+                id="resultDigitsOfPifagor"
+                type="text"
+                class="validate black-text"
+                placeholder="result"
+              />
+              <label for="resultDigitsOfPifagor"
+                >Result of Pifagor digits</label
+              >
+            </div>
+          </div>
+        </form>
+        <form action="" class="col s12">
+          <div class="row">
+            <h5 class="center valign-wrapper">
+              Enter the value into fields(list of divider)<i
+                class="medium material-icons"
+                >arrow_downward</i
+              >
+            </h5>
+            <div class="input-field col s8">
+              <input id="dataListOfDividers" type="text" class="validate" />
+              <label for="dataListOfDividers" class="black-text"
+                >Enter the number</label
+              >
+            </div>
+            <a
+              class="waves-effect waves-teal btn-flat col s4 center-align btn-large"
+              id="calcListOFdividers"
+              >Calculate</a
+            >
+            <div class="input-field col s12">
+              <input
+                disabled
+                id="resultListOFdividers"
+                type="text"
+                class="validate black-text"
+                placeholder="result"
+              />
+              <label for="resultListOFdividers">List of dividers</label>
+            </div>
+          </div>
+        </form>
+        <form action="" class="col s12">
+          <div class="row">
+            <h5 class="center valign-wrapper">
+              Enter the value into fields<i class="medium material-icons"
+                >arrow_downward</i
+              >
+            </h5>
+            <div class="input-field col s4">
+              <input
+                id="dataListOfСommonDivisors"
+                type="text"
+                class="validate"
+              />
+              <label for="dataListOfСommonDivisors" class="black-text"
+                >Enter the first number</label
+              >
+            </div>
+            <div class="input-field col s4">
+              <input
+                id="dataListOfСommonDivisors1"
+                type="text"
+                class="validate"
+              />
+              <label for="dataListOfСommonDivisors1" class="black-text"
+                >Enter the second number</label
+              >
+            </div>
+            <a
+              class="waves-effect waves-teal btn-flat col s4 center-align btn-large"
+              id="calcListOfСommonDivisors"
+              >Calculate</a
+            >
+            <div class="input-field col s12">
+              <input
+                disabled
+                id="resultListOfСommonDivisors"
+                type="text"
+                class="validate black-text"
+                placeholder="result"
+              />
+              <label for="resultListOfСommonDivisors"
+                >List of common dividers</label
+              >
+            </div>
+          </div>
+        </form>
+        <form action="" class="col s12">
+          <div class="row">
+            <h5 class="center valign-wrapper">
+              Enter the value into fields<i class="medium material-icons"
+                >arrow_downward</i
+              >
+            </h5>
+            <div class="input-field col s4">
+              <input id="dataOfNOD" type="text" class="validate" />
+              <label for="dataOfNOD" class="black-text"
+                >Enter the first number</label
+              >
+            </div>
+            <div class="input-field col s4">
+              <input id="dataOfNOD1" type="text" class="validate" />
+              <label for="dataOfNOD1" class="black-text"
+                >Enter the second number</label
+              >
+            </div>
+            <a
+              class="waves-effect waves-teal btn-flat col s4 center-align btn-large"
+              id="calcNOD"
+              >Calculate</a
+            >
+            <div class="input-field col s12">
+              <input
+                disabled
+                id="resultofNOD"
+                type="text"
+                class="validate black-text"
+                placeholder="result"
+              />
+              <label for="resultofNOD">NOD</label>
+            </div>
+          </div>
+        </form>
+        <form action="" class="col s12">
+          <div class="row">
+            <h5 class="center valign-wrapper">
+              Enter the value into fields<i class="medium material-icons"
+                >arrow_downward</i
+              >
+            </h5>
+            <div class="input-field col s4">
+              <input id="dataOfMinDididers" type="text" class="validate" />
+              <label for="dataOfMinDididers" class="black-text"
+                >Enter the first number</label
+              >
+            </div>
+            <div class="input-field col s4">
+              <input id="dataOfMinDididers1" type="text" class="validate" />
+              <label for="dataOfMinDididers1" class="black-text"
+                >Enter the second number</label
+              >
+            </div>
+            <a
+              class="waves-effect waves-teal btn-flat col s4 center-align btn-large"
+              id="calcOfMinDividers"
+              >Calculate</a
+            >
+            <div class="input-field col s12">
+              <input
+                disabled
+                id="resultOfMinDividers"
+                type="text"
+                class="validate black-text"
+                placeholder="result"
+              />
+              <label for="resultOfMinDividers">Min dividers both numbers</label>
+            </div>
+          </div>
+        </form>
+      </section>
+      <section class="row">
+        <h3 class="center-align">Text analyzer</h3>
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field col s12">
+              <i class="material-icons prefix">mode_edit</i>
+              <textarea
+                id="textAnalyzer"
+                class="materialize-textarea"
+                data-length="120"
+              ></textarea>
+              <label for="textAnalyzer">Text analyzer</label>
+            </div>
+          </div>
+          <div class="row" id="chooseSettings">
+            <p>
+              <label>
+                <input type="checkbox" />
+                <span>How many words contains textarea</span>
+              </label>
+            </p>
+            <p>
+              <label>
+                <input type="checkbox" />
+                <span>How manu characters contains textarea</span>
+              </label>
+            </p>
+            <p>
+              <label>
+                <input type="checkbox" />
+                <span>How manu characters contains textarea minus spaces</span>
+              </label>
+            </p>
+            <p>
+              <label>
+                <input type="checkbox" />
+                <span>Which percantages characters contains textarea</span>
+              </label>
+            </p>
+          </div>
+        </form>
+      </section>
+      <section class="row">
+        <h3 class="center-align">Text translit</h3>
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field col s12">
+              <textarea
+                id="textTranslit"
+                class="materialize-textarea"
+              ></textarea>
+              <label for="textTranslit" class="black-text">Text translit</label>
+            </div>
+          </div>
+          <div class="row">
+            <p>
+              <label>
+                <input type="checkbox" id="choiseTextTranslit" />
+                <span class="black-text">Mode </span>
+              </label>
+            </p>
+            <div class="col s12" id="resTextTranslit"></div>
+          </div>
+        </form>
+      </section>
+      <section class="row">
+        <h3 class="center-align">
+          Game guess the number! Enter your's number and push the button
+        </h3>
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field col s4 offset-s2">
+              <input id="dataFromUser" type="text" class="validate" />
+              <label for="dataFromUser" class="black-text"
+                >Enter the number</label
+              >
+            </div>
+            <a
+              class="waves-effect waves-light btn-large col s4 center-align"
+              id="calcOfNumbers"
+              >Try</a
+            >
+            <div class="col s12" id="resGuessNumber"></div>
+          </div>
+        </form>
+      </section>
+      <section class="row table">
+        <h3 class="center-align">Game guess the cell of table!</h3>
+      </section>
+      <section class="row">
+        <h3 class="center-align">Keyboard</h3>
+        <div class="input-field col s12">
+          <input id="outputDataFromKeyBoard" type="text" class="validate" />
+        </div>
+        <div class="col s12 keyboard">
+          <div class="keyboard__container-digits">
+            <div class="keyboard__item" data-value="`">`</div>
+            <div class="keyboard__item" data-value="1">1</div>
+            <div class="keyboard__item" data-value="2">2</div>
+            <div class="keyboard__item" data-value="3">3</div>
+            <div class="keyboard__item" data-value="4">4</div>
+            <div class="keyboard__item" data-value="5">5</div>
+            <div class="keyboard__item" data-value="6">6</div>
+            <div class="keyboard__item" data-value="7">7</div>
+            <div class="keyboard__item" data-value="8">8</div>
+            <div class="keyboard__item" data-value="9">9</div>
+            <div class="keyboard__item" data-value="0">0</div>
+            <div class="keyboard__item" data-value="-">-</div>
+            <div class="keyboard__item" data-value="=">=</div>
+            <div class="keyboard__item-double-width" data-value="BackSpace">
+              Back-Space
+            </div>
+          </div>
+          <div class="keyboard__container-first-letters-line">
+            <div class="keyboard__item-double-width" data-value="Tab">Tab</div>
+            <div class="keyboard__item" data-value="q">q</div>
+            <div class="keyboard__item" data-value="w">w</div>
+            <div class="keyboard__item" data-value="e">e</div>
+            <div class="keyboard__item" data-value="r">r</div>
+            <div class="keyboard__item" data-value="t">t</div>
+            <div class="keyboard__item" data-value="y">y</div>
+            <div class="keyboard__item" data-value="u">u</div>
+            <div class="keyboard__item" data-value="i">i</div>
+            <div class="keyboard__item" data-value="o">o</div>
+            <div class="keyboard__item" data-value="p">p</div>
+            <div class="keyboard__item" data-value="[">[</div>
+            <div class="keyboard__item" data-value="]">]</div>
+            <div class="keyboard__item" data-value="\">\</div>
+          </div>
+          <div class="keyboard__container-second-letters-line">
+            <div class="keyboard__item-double-width" data-value="Caps">
+              Caps
+            </div>
+            <div class="keyboard__item" data-value="a">a</div>
+            <div class="keyboard__item" data-value="s">s</div>
+            <div class="keyboard__item" data-value="f">f</div>
+            <div class="keyboard__item" data-value="g">g</div>
+            <div class="keyboard__item" data-value="h">h</div>
+            <div class="keyboard__item" data-value="j">j</div>
+            <div class="keyboard__item" data-value="k">k</div>
+            <div class="keyboard__item" data-value="l">l</div>
+            <div class="keyboard__item" data-value=";">;</div>
+            <div class="keyboard__item" data-value="''">'</div>
+            <div class="keyboard__item-double-width">Enter</div>
+          </div>
+          <div class="keyboard__container-thitd-letters-line">
+            <div class="keyboard__item-double-width">Shift</div>
+            <div class="keyboard__item" data-value="z">z</div>
+            <div class="keyboard__item" data-value="x">x</div>
+            <div class="keyboard__item" data-value="c">c</div>
+            <div class="keyboard__item" data-value="v">v</div>
+            <div class="keyboard__item" data-value="b">b</div>
+            <div class="keyboard__item" data-value="n">n</div>
+            <div class="keyboard__item" data-value="m">m</div>
+            <div class="keyboard__item" data-value=",">,</div>
+            <div class="keyboard__item" data-value=".">.</div>
+            <div class="keyboard__item" data-value="/">/</div>
+            <div class="keyboard__item">&uarr;</div>
+            <div class="keyboard__item-double-width">Shift</div>
+          </div>
+          <div class="keyboard__container-service-buttons">
+            <div class="keyboard__item">Ctrl</div>
+            <div class="keyboard__item-space-bar" data-value="Space">
+              SpaceBoard
+            </div>
+            <div class="keyboard__item">Alt</div>
+          </div>
+        </div>
+      </section>
+      <section class="row">
+        <h3 class="center-align">Calculator</h3>
+        <div class="input-field col s4 offset-s4 calculator">
+          <input
+            type="text"
+            class="validate calculator__value"
+            id="calculator"
+          />
+          <label for="calculator" class="black-text"></label>
+          <span class="calculator__num-clear">c</span>
+          <span class="calculator__num-memory">m</span>
+          <span class="calculator__num-operators">/</span>
+          <span class="calculator__num-operators">*</span>
+          <span class="calculator__num">7</span>
+          <span class="calculator__num">8</span>
+          <span class="calculator__num">9</span>
+          <span class="calculator__num-operators">-</span>
+          <span class="calculator__num">4</span>
+          <span class="calculator__num">5</span>
+          <span class="calculator__num">6</span>
+          <span class="calculator__num-operators">+</span>
+          <span class="calculator__num">3</span>
+          <span class="calculator__num">2</span>
+          <span class="calculator__num">1</span>
+          <span class="calculator__num">0</span>
+          <span class="calculator__num">00</span>
+          <span class="calculator__num">.</span>
+          <span class="calculator__num-res">ins</span>
+          <span class="calculator__num-equal">=</span>
+        </div>
+      </section>
+      <section class="row">
+        <h3 class="center-align">Inline Calendar</h3>
+        <ul class="collection with-header linecalendar"></ul>
+      </section>
+      <section class="row">
+        <h3 class="center-align">Info about HTML tags</h3>
+        <h5 class="center-align">
+          Enter the tag into
+          fields(body,article,aside,header,section,main,h1,nav)
+          <i class="small material-icons">arrow_downward</i>
+        </h5>
+        <div class="col s12 infotags"></div>
+      </section>
+      <section class="row">
+        <h3 class="center-align">Historical Events</h3>
+        <h5 class="center-align">
+          Enter the year end push Enter (2018,2019,2020)
+          <i class="small material-icons">arrow_downward</i>
+        </h5>
+        <div class="input-field col s4 offset-s4">
+          <input id="historicalEvents" type="text" class="validate" />
+          <label for="historicalEvents" class="black-text"
+            >Enter the year</label
+          >
+        </div>
+        <table class="striped centered white events-table"></table>
+      </section>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
