@@ -57,8 +57,8 @@ class InfoTag {
   createInterface() {
     this.div.classList.add("input-field");
     this.div.classList.add("col");
-    this.div.classList.add("s8");
-    this.div.classList.add("offset-s2");
+    this.div.classList.add("s10");
+    this.div.classList.add("offset-s1");
     this.input.type = "text";
     this.input.id = "infoTags";
     this.input.classList.add("validate");
