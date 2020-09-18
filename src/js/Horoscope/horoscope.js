@@ -182,7 +182,6 @@ class Horoscope {
       const finishDate = this.checkData(e.target.value);
       let flag;
       if (e.key == "Enter") {
-        console.log(finishDate);
         if (finishDate >= "03-25" && finishDate <= "04-19") {
           flag = "Aries";
           this.getInfo(flag);
@@ -256,7 +255,7 @@ class Horoscope {
         if (iterator[option]) {
           this.container.insertAdjacentHTML(
             "afterbegin",
-            `<p>${iterator[option]}</p>`
+            `<p class="flow-text">${iterator[option]}</p>`
           );
         }
       }

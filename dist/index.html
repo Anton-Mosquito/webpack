@@ -666,7 +666,7 @@
       <section class="row">
         <h3 class="center-align">Horoscope</h3>
         <h5 class="center-align">
-          Enter your's birthday!
+          Enter your's birthday! & push Enter
           <i class="small material-icons">arrow_downward</i>
         </h5>
         <form action="#" class="col s4 form--horoscope">
@@ -678,7 +678,7 @@
                 data-value="Yesterday"
                 class="with-gap"
               />
-              <span>Yesterday</span>
+              <span class="black-text">Yesterday</span>
             </label>
           </p>
           <p>
@@ -688,8 +688,9 @@
                 type="radio"
                 data-value="Today"
                 class="with-gap"
+                checked
               />
-              <span>Today</span>
+              <span class="black-text">Today</span>
             </label>
           </p>
           <p>
@@ -700,13 +701,15 @@
                 type="radio"
                 data-value="Tomorrow"
               />
-              <span>Tomorrow</span>
+              <span class="black-text">Tomorrow</span>
             </label>
           </p>
         </form>
         <div class="input-field col s4">
           <input id="horoscope" type="text" class="validate" />
-          <label for="horoscope" class="black-text">Enter the date</label>
+          <label for="horoscope" class="black-text"
+            >Enter the date(format xx.xx.xxxx)</label
+          >
         </div>
         <div class="col s12 infohoroscope"></div>
       </section>
