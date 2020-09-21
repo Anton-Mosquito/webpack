@@ -170,7 +170,7 @@ const base = {
 };
 
 class Horoscope {
-  constructor(base, container, input) {
+  constructor(base) {
     (this.base = base),
       (this.container = document.querySelector(".infohoroscope")),
       (this.input = document.querySelector("#horoscope")),

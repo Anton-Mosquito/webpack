@@ -26,3 +26,4 @@ import "./Line_Calendar/lineCalendar";
 import "./Info_tag/infoTag";
 import "./Historical_events/historicalEcents";
 import "./Horoscope/horoscope";
+import "./Prediction/predictions";
