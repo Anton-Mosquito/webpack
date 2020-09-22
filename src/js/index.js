@@ -28,3 +28,4 @@ import "./Historical_events/historicalEcents";
 import "./Horoscope/horoscope";
 import "./Prediction/predictions";
 import "./Autocompletion/autocompletion";
+import "./Spoiler/spoiler";
