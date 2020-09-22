@@ -27,3 +27,4 @@ import "./Info_tag/infoTag";
 import "./Historical_events/historicalEcents";
 import "./Horoscope/horoscope";
 import "./Prediction/predictions";
+import "./Autocompletion/autocompletion";
