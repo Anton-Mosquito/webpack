@@ -29,3 +29,5 @@ import "./Horoscope/horoscope";
 import "./Prediction/predictions";
 import "./Autocompletion/autocompletion";
 import "./Spoiler/spoiler";
+import "./exmpl";
+import "./Tabs/Tabs";
