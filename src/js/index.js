@@ -31,3 +31,4 @@ import "./Autocompletion/autocompletion";
 import "./Spoiler/spoiler";
 import "./exmpl";
 import "./Tabs/Tabs";
+import "./Acordeon/acordeon";

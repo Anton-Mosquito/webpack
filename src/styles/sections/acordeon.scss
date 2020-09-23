@@ -1,0 +1,29 @@
+.acordeon {
+    margin: 0 auto;
+    width: 400px;
+    &__tab {
+        margin-bottom: 10px;
+        &.active .acordeon__tab-text {
+            display: block;
+        }
+        &-link a {
+            display: block;
+            padding: 10px;
+            color: black;
+            text-decoration: none;
+            text-align: center;
+            background: #f8f8f8;
+            border: 1px solid gray;
+            &:hover {
+                background: #f2f2f2;
+            }
+        }
+        &-text {
+            border: 1px dashed gray;
+            border-top: none;
+            padding: 10px;
+            height: 300px;
+            display: none;
+        }
+    }
+}
