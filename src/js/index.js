@@ -32,3 +32,4 @@ import "./Spoiler/spoiler";
 import "./exmpl";
 import "./Tabs/Tabs";
 import "./Acordeon/acordeon";
+import "./Game-Towns/towns";
