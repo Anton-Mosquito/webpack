@@ -1,0 +1,9 @@
+.checklist {
+    &__items {
+        display: flex;
+        justify-content: space-between;
+        &--cross {
+            text-decoration: line-through;
+        }
+    }
+}

@@ -100,13 +100,16 @@ class Towns {
     const findElement = (el, arr) => {
       return arr.indexOf(el);
     };
+
     const filterResults = (arr, info) => {
       return arr.filter((el) => el != info && el.startsWith(info.slice(-1)));
     };
+
     const deleteElement = (el, arr) => {
       let findIndex = findElement(el, arr);
       arr.splice(findIndex, 1);
     };
+
     field.removeAttribute("disabled");
     const allCities = [
       "абингдон",
