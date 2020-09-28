@@ -806,8 +806,32 @@
           Enter names of cities
           <i class="small material-icons">arrow_downward</i>
         </h5>
-        <div class="input-field col s4 offset-s4">
-          <input id="townsData" type="text" class="validate center-align" />
+        <form action="#" class="col s4 form--towns">
+          <p>
+            <label>
+              <input name="group1" type="radio" data-value="player" checked />
+              <span class="black-text">With another player</span>
+            </label>
+            <label>
+              <input name="group1" type="radio" data-value="bot" />
+              <span class="black-text">With BOT!</span>
+            </label>
+          </p>
+          <p class="center-align">
+            <a
+              class="btn-floating btn-small waves-effect waves-light red"
+              id="chooseGame"
+              ><i class="material-icons">send</i></a
+            >
+          </p>
+        </form>
+        <div class="input-field col s4 vertical-align">
+          <input
+            id="townsData"
+            type="text"
+            class="validate center-align"
+            disabled
+          />
         </div>
         <div id="townsResult" class="col s8 offset-s2 flow-text"></div>
       </section>

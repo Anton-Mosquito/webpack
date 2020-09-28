@@ -241,8 +241,7 @@ class Horoscope {
 
   getInfo(key) {
     const checkDay = () => {
-      const form = document.querySelector(".form--horoscope");
-      const radioChoise = form.querySelectorAll("input");
+      const radioChoise = document.querySelectorAll(".form--horoscope input");
       for (const iterator of radioChoise) {
         if (iterator.checked)
           return iterator.getAttribute("data-value").toLowerCase();
