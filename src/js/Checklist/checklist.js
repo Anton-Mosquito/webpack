@@ -48,7 +48,9 @@ class Checklist {
         });
       } else if (kls == "crossOutLink") {
         el.addEventListener("click", (e) => {
-          let neighbor = el.previousElementSibling.previousElementSibling;
+          let neighbor =
+            el.parentElement.firstElementChild ||
+            el.previousElementSibling.previousElementSibling;
           neighbor.classList.toggle("checklist__items--cross");
           e.preventDefault();
         });

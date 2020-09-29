@@ -841,6 +841,31 @@
         </div>
         <ul class="collection col s6 offset-s3 checklist"></ul>
       </section>
+      <section class="row">
+        <div class="note-book__wrapper row">
+          <div class="note-book__menu col s3">
+            <ul class="note-book__menu-notes">
+            </ul>
+            <p class="note-book__create center-align">
+              <a class="waves-effect purple accent-4 btn note-book__create-edit" id="noteBookRecordBtn"
+                ><i class="material-icons right">edit
+                </i>Edit</a
+              >
+            </p>
+          </div>
+          <p class="note-book__text input-field col s9">
+            <textarea id="noteBookData" class="materialize-textarea"></textarea>
+            <label for="noteBookData" class="grey-text text-darken-2"
+              >Text writing here!</label>
+            <a
+              class="waves-effect blue darken-4 btn-large right"
+              id="noteBookSaveBtn"
+              data-mode="create"
+              ><i class="material-icons right">save</i>Save</a>
+            <p class="flow-text notebook__text-mode">Create mode</p>
+          </p>
+        </div>
+      </section>
     </main>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="main.js"></script>

@@ -1,0 +1,29 @@
+.note-book__menu {
+    &-notes {
+        padding: 0;
+        margin: 0;
+        &-item {
+            display: flex;
+            justify-content: space-evenly;
+            padding: 5px;
+            text-align: center;
+            margin-bottom: 10px;
+            border: 1px dashed gray;
+            list-style-type: none;
+            cursor: pointer;
+            background: #ea80fc;
+            &.active {
+                background: #e040fb;
+            }
+            &:hover {
+                background: #e040fb;
+            }
+        }
+    }
+}
+
+.note-book__text {
+    a {
+        width: 100%;
+    }
+}

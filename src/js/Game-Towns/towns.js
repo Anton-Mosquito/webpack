@@ -7,6 +7,7 @@ const RadioChoise = document.querySelectorAll(".form--towns input");
 
 class Towns {
   constructor() {}
+
   static checkRadio(arr) {
     for (const iterator of arr) {
       if (iterator.checked) {
