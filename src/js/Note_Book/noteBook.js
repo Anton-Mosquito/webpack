@@ -15,7 +15,7 @@ class NoteBook {
   }
 
   init() {
-    this.btnSave.addEventListener("click", (e) => {
+    this.btnSave.addEventListener("click", () => {
       let mode = this.btnSave.dataset.mode;
       if (mode == "create") {
         let key = Object.keys(this._base).length;
@@ -23,14 +23,11 @@ class NoteBook {
         this.dataField.value = "";
         const li = this.createListItem();
         this.menu.appendChild(li);
-        this.linksActions();
       }
       if (mode == "update") {
         const active = this.findItems("active").getAttribute("data-key");
-        let key = active;
-        base[key] = this.dataField.value;
+        this._base[active] = this.dataField.value;
         this.dataField.value = "";
-        console.log(base);
       }
     });
 
@@ -56,63 +53,38 @@ class NoteBook {
       span.innerHTML = "X";
       return span;
     };
+    const getRecordNumber = (element) => {
+      return element.dataset.key;
+    };
     const iterator = this.findItems("arr").length + 1;
     const li = document.createElement("li");
     const span = createSpan();
     li.classList.add("note-book__menu-notes-item");
     li.innerHTML = `record ${iterator}`;
     li.dataset.key = iterator;
-    li.appendChild(span);
-    return li;
-  }
-
-  linksActions() {
-    let arr = this.findItems("arr");
-    let element = arr[arr.length - 1];
-    element.addEventListener("click", (e) => {
+    li.addEventListener("click", (e) => {
       if (e.target.tagName.toLowerCase() == "li") {
-        if (element.classList.contains("active")) {
-          element.classList.remove("active");
+        if (li.classList.contains("active")) {
+          li.classList.remove("active");
           this.dataField.value = "";
         } else {
-          arr.forEach((el) => {
+          this.findItems("arr").forEach((el) => {
             if (el.classList.contains("active")) el.classList.remove("active");
           });
-          arr[arr.length - 1].classList.add("active");
-          const numberOfRecord = element.dataset.key;
+          li.classList.add("active");
+          const numberOfRecord = getRecordNumber(li);
           this.dataField.value = this._base[numberOfRecord];
         }
       }
       if (e.target.tagName.toLowerCase() == "span") {
-        this.menu.removeChild(element);
+        this.menu.removeChild(li);
+        const numberOfRecord = getRecordNumber(li);
+        delete this._base[numberOfRecord];
+        console.log(this._base);
       }
     });
-
-    //* Через цикл идет повторное навешивание события
-    //* Решение пока не найденно, возможно через первый цикл удалять все обработчики
-    //* а через второй добавлять??
-
-    // arr.forEach((el) => {
-    //   el.addEventListener("click", (e) => {
-    //     if (e.target.tagName.toLowerCase() == "li") {
-    //       if (el.classList.contains("active")) {
-    //         el.classList.remove("active");
-    //         this.dataField.value = "";
-    //       } else {
-    //         arr.forEach((el) => {
-    //           if (el.classList.contains("active"))
-    //             el.classList.remove("active");
-    //         });
-    //         el.classList.add("active");
-    //         const numberOfRecord = el.dataset.key;
-    //         this.dataField.value = this._base[numberOfRecord];
-    //       }
-    //     }
-    //     if (e.target.tagName.toLowerCase() == "span") {
-    //       this.menu.removeChild(el);
-    //     }
-    //   });
-    // });
+    li.appendChild(span);
+    return li;
   }
 
   findItems(flag) {
