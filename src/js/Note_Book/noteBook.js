@@ -18,7 +18,7 @@ class NoteBook {
     this.btnSave.addEventListener("click", () => {
       let mode = this.btnSave.dataset.mode;
       if (mode == "create") {
-        let key = Object.keys(this._base).length;
+        const key = Object.keys(this._base).length;
         base[key + 1] = this.dataField.value;
         this.dataField.value = "";
         const li = this.createListItem();
