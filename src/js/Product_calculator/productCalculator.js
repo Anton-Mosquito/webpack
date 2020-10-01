@@ -6,10 +6,14 @@ class ProductCalculator {
     this.buttonAdd = document.querySelector("[data-product-action='add']");
     this.table = document.querySelector("[data-product-calculator-table]");
     this.result = document.querySelector("[data-product-calculator-result]");
+    this._tr = null;
+    this._td = null;
+    this._input = null;
     this.init();
   }
 
   init() {
+    this.crteateElement();
     this.eventListener();
   }
 
@@ -31,7 +35,7 @@ class ProductCalculator {
   }
 
   add() {
-    const tr = document.createElement("tr");
+    const tr = this.tr;
     const cost =
       this.priceOfProductField.value * this.amountOfProductField.value;
 
@@ -63,7 +67,8 @@ class ProductCalculator {
   edit(element) {
     const text = element.innerHTML;
     element.innerHTML = "";
-    const input = this.createInput(text);
+    const input = this.input;
+    input.value = text;
     input.focus();
     element.append(input);
   }
@@ -91,7 +96,7 @@ class ProductCalculator {
   }
 
   createCell(tr, value, name, countAttribut) {
-    const td = document.createElement("td");
+    const td = this.td;
 
     if (name === "delete") {
       td.innerHTML = `<a class="btn-floating waves-effect waves-light teal accent-3" ><i class="material-icons" data-product-action='delete'>delete</i></a>`;
@@ -118,12 +123,25 @@ class ProductCalculator {
     return tr;
   }
 
-  createInput(text) {
+  crteateElement() {
+    const tr = document.createElement("tr");
+    const td = document.createElement("td");
     const input = document.createElement("input");
     input.type = "text";
     input.dataset.productEditField = "yes";
-    input.value = text;
-    return input;
+    this._tr = tr;
+    this._td = td;
+    this._input = input;
+  }
+
+  get tr() {
+    return this._tr.cloneNode(true);
+  }
+  get td() {
+    return this._td.cloneNode(true);
+  }
+  get input() {
+    return this._input.cloneNode(true);
   }
 
   recountTotal() {
