@@ -2,7 +2,46 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<!-- Отключает формирование ссылки у номера телефона на iOS -->
+		<meta name="format-detection" content="telephone=no">
+		<!-- Краткое описание страницы  -->
+		<meta name="description" content="Simple example with JavaScript">
+		<!-- Ключевые слова страницы  -->
+		<meta name="keywords" content="js , example, simple"> 
+		<!-- Управление доступом поисковых роботов к странице -->
+		<!-- Запрет индексации страницы полностью -->
+		<meta name="robots" content="none">
+		<!-- Автор страницы -->
+		<meta name="Author" content="Ant Mosquito"> 
+		<!-- Авторские права -->
+		<meta name="Copyright" content="Ant Mosquito"> 
+		<!-- Адрес автора -->
+		<meta name="Address" content="Ukraine, Cherkassy">
+		<!-- локализация сайта, для русскоязычного сайта ru_RU -->
+		<meta property="og:locale" content="ru_RU">
+		<!-- тип контента, по умолчанию используется article -->
+		<meta property="og:type" content="article">
+		<!-- заголовок страницы, который будет выводится в записи социальной сети -->
+		<meta property="og:title" content="JavaScript">
+		<!-- описание страницы -->
+		<meta property="og:description" content="Description for social media">
+		<!-- ссылка на изображение, которое будет публиковаться в записи -->
+		<meta property="og:image" content="">
+		<!-- ссылка на текущую страницу -->
+		<meta property="og:url" content="">
+		<!-- название сайта -->
+		<meta property="og:site_name" content="">
+		<!-- Тип карты, по умолчанию используется summary -->
+		<meta name="twitter:card" content="summary">
+		<!-- Имя/логин автора -->
+		<meta name="twitter:site" content="Ant Mosquito">
+		<!-- Название страницы -->
+		<meta name="twitter:title" content="">
+		<!-- Описание страницы -->
+		<meta name="twitter:description" content="">
+		<!-- Cсылка на изображение -->
+		<meta name="twitter:image" content="">
     <title>Practice tutorial</title>
     <link
       rel="stylesheet"
@@ -915,6 +954,189 @@
         <p class="right flow-text" >
          <span>Total price: </span><span data-product-calculator-result>0</span>
         </p>
+      </section>
+      <section class="row" data-test-wrapper>
+        <h3 class="center-align">Test with questions and answers</h3>
+        <h5 class="center-align">
+          Enter data and push 'Enter'
+          <i class="small material-icons">arrow_downward</i>
+        </h5>
+          <div class="row valign-wrapper">
+            <p class="col s6 center-align flow-text">How many letters are there in the word "Hello?"</p>
+            <div class="input-field col s4">
+              <input type="text" class="validate" id="testQuestion1" data-right="5">
+              <label for="testQuestion1" class="black-text">Answer write here!</label>
+            </div>
+          </div>
+          <div class="row valign-wrapper">
+            <p class="col s6 center-align flow-text">How many letters are there in the word "World?"</p>
+            <div class="input-field col s4">
+              <input type="text" class="validate" id="testQuestion2" data-right="5">
+              <label for="testQuestion2" class="black-text">Answer write here!</label>
+            </div>
+          </div>
+          <div class="row valign-wrapper">
+            <p class="col s6 center-align flow-text">How many letters are there in the word "Yesterday?"</p>
+            <div class="input-field col s4">
+              <input type="text" class="validate" id="testQuestion3" data-right="9">
+              <label for="testQuestion3" class="black-text">Answer write here!</label>
+            </div>
+          </div>
+           <div class="col s12">
+              <a class="waves-effect deep-orange darken-4 btn" data-test-check>Check</a>
+            </div>
+      </section>
+      <section class="row" data-test1-wrapper>
+        <h3 class="center-align">Test with questions and answers v1.0</h3>
+        <h5 class="center-align">
+          Enter data and push 'Enter'
+          <i class="small material-icons">arrow_downward</i>
+        </h5>
+          <div class="col s12" data-for-insert>
+            <a class="waves-effect deep-orange darken-4 btn" data-test-check>Check</a>
+          </div>
+      </section>
+      <section class="row" data-test2-wrapper>
+        <h3 class="center-align">Test with questions and answers v2.0</h3>
+        <h5 class="center-align">
+          Enter data and push 'Enter'
+          <i class="small material-icons">arrow_downward</i>
+        </h5>
+        <div class="col s12" data-for-insert>
+          <a class="waves-effect deep-orange darken-4 btn" data-test-check>Check</a>
+        </div>
+      </section>
+      <section class="row" data-test3-wrapper>
+        <h3 class="center-align">Test with questions and answers v3.0</h3>
+        <h5 class="center-align">
+          Enter data and push 'Enter'
+          <i class="small material-icons">arrow_downward</i>
+        </h5>
+        <div class="col s12" data-for-insert>
+          <a class="waves-effect deep-orange darken-4 btn" data-test-check>Check</a>
+        </div>
+      </section>
+      <section class="row" data-test4-wrapper>
+        <h3 class="center-align">Test with questions and answers v4.0</h3>
+        <h5 class="center-align">
+          Enter data and push 'Enter'
+          <i class="small material-icons">arrow_downward</i>
+        </h5>
+          <div class="row valign-wrapper">
+            <p class="col s6 center-align flow-text">How many letters are there in the word "Hello?"</p>
+            <p class="col s6 center-align">
+              <label>
+                <input name="question1" type="radio"/>
+                <span class="black-text">12</span>
+              </label>
+              <label>
+                <input name="question1" type="radio" data-right/>
+                <span class="black-text">5</span>
+              </label>
+              <label>
+                <input name="question1" type="radio"/>
+                <span class="black-text">4</span>
+              </label>
+            </p>
+          </div>
+          <div class="row valign-wrapper">
+            <p class="col s6 center-align flow-text">How many letters are there in the word "World?"</p>
+            <p class="col s6 center-align">
+              <label>
+                <input name="question1" type="radio"/>
+                <span class="black-text">4</span>
+              </label>
+              <label>
+                <input name="question1" type="radio"/>
+                <span class="black-text">7</span>
+              </label>
+              <label>
+                <input name="question1" type="radio" data-right/>
+                <span class="black-text">5</span>
+              </label>
+            </p>
+          </div>
+          <div class="row valign-wrapper">
+            <p class="col s6 center-align flow-text">How many letters are there in the word "Yesterday?"</p>
+            <p class="col s6 center-align">
+              <label>
+                <input name="question1" type="radio" data-right/>
+                <span class="black-text">9</span>
+              </label>
+              <label>
+                <input name="question1" type="radio"/>
+                <span class="black-text">7</span>
+              </label>
+              <label>
+                <input name="question1" type="radio"/>
+                <span class="black-text">8</span>
+              </label>
+            </p>
+          </div>
+           <div class="col s12">
+              <a class="waves-effect deep-orange darken-4 btn" data-test-check>Check</a>
+            </div>
+      </section>
+      <section class="row" data-test5-wrapper>
+        <h3 class="center-align">Test with questions and answers v4.1</h3>
+        <h5 class="center-align">
+          Enter data and push 'Enter'
+          <i class="small material-icons">arrow_downward</i>
+        </h5>
+          <div class="row valign-wrapper" data-test-row>
+            <p class="col s6 center-align flow-text">How many letters are there in the word "Hello?"</p>
+            <p class="col s6 center-align">
+              <label>
+                <input name="question1" type="radio"/>
+                <span class="black-text">12</span>
+              </label>
+              <label>
+                <input name="question1" type="radio"/>
+                <span class="black-text">5</span>
+              </label>
+              <label>
+                <input name="question1" type="radio"/>
+                <span class="black-text">4</span>
+              </label>
+            </p>
+          </div>
+          <div class="row valign-wrapper" data-test-row>
+            <p class="col s6 center-align flow-text">How many letters are there in the word "World?"</p>
+            <p class="col s6 center-align">
+              <label>
+                <input name="question2" type="radio"/>
+                <span class="black-text">4</span>
+              </label>
+              <label>
+                <input name="question2" type="radio"/>
+                <span class="black-text">7</span>
+              </label>
+              <label>
+                <input name="question2" type="radio"/>
+                <span class="black-text">5</span>
+              </label>
+            </p>
+          </div>
+          <div class="row valign-wrapper" data-test-row>
+            <p class="col s6 center-align flow-text">How many letters are there in the word "Yesterday?"</p>
+            <p class="col s6 center-align">
+              <label>
+                <input name="question3" type="radio"/>
+                <span class="black-text">9</span>
+              </label>
+              <label>
+                <input name="question3" type="radio"/>
+                <span class="black-text">7</span>
+              </label>
+              <label>
+                <input name="question3" type="radio"/>
+                <span class="black-text">8</span>
+              </label>
+            </p>
+          </div>
+           <div class="col s12">
+              <a class="waves-effect deep-orange darken-4 btn" data-test-check>Check</a>
+            </div>
       </section>
     </main>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>

@@ -99,7 +99,7 @@ class ProductCalculator {
     const td = this.td;
 
     if (name === "delete") {
-      td.innerHTML = `<a class="btn-floating waves-effect waves-light teal accent-3" ><i class="material-icons" data-product-action='delete'>delete</i></a>`;
+      td.innerHTML = `<a class="waves-effect teal accent-3 btn" data-product-action='delete' >Delete</a>`;
       td.classList.add("center-align");
       tr.appendChild(td);
     } else if (name === "cost") {
