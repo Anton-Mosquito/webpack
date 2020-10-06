@@ -41,5 +41,6 @@ import "./Product_calculator/productCalculator";
 //import "./Test_with_questions_and_answers/testWithAnswerAndQuestionArr";
 import "./Test_with_questions_and_answers/testWithAnswersAndQuestionObj";
 import "./Test_with_questions_and_answers/testWithAnswerAndQuestionObj1";
-import "./Test_with_questions_and_answers/testWIthVariantAnswersHTML";
+//import "./Test_with_questions_and_answers/testWIthVariantAnswersHTML";
 import "./Test_with_questions_and_answers/testWithVariantAnswersArr";
+import "./Test_with_questions_and_answers/testWithVariantAnswersObj";
