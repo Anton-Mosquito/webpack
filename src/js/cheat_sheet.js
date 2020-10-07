@@ -4,7 +4,7 @@ function getSum() {
     return current + next;
   });
 }
-getSum(1, 2, 3, 4, 5);
+//getSum(1, 2, 3, 4, 5);
 
 function concatObject() {
   let data = {
@@ -27,7 +27,7 @@ function concatObject() {
   };
   console.log(resultObjct);
 }
-concatObject();
+//concatObject();
 
 function exampleWithSimbol() {
   let id = Symbol();
@@ -49,4 +49,22 @@ function exampleWithSimbol() {
 
   console.log(Symbol.keyFor(first1));
 }
-exampleWithSimbol();
+//exampleWithSimbol();
+
+const checkDate = (year, month, day) => {
+  const date = new Date(year, month - 1, day);
+  return (
+    date.getFullYear() === year &&
+    date.getMonth() === month - 1 &&
+    date.getDate() === day
+  );
+};
+//console.log(checkDate(2020, 1, 31));
+
+const checkLastDayOfMonthAndLeapYear = (year, month = 2, day = 0) => {
+  const date = new Date(year, month, day);
+  return date.getDate() === 29
+    ? console.log(`This year is a leap`)
+    : console.log(`This year isn't a leap`);
+};
+// checkLastDayOfMonthAndLeapYear(2100);
