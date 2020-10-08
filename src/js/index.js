@@ -46,4 +46,6 @@ import "./Test_with_questions_and_answers/testWithVariantAnswersArr";
 import "./Test_with_questions_and_answers/testWithVariantAnswersObj";
 import "./Slider/textSlider";
 import "./Slider/textSliderWithArrow";
-import "./Slider/imageSliderArr";
+//import "./Slider/imageSliderArr";
+//import "./Slider/imageSliderHTML";
+import "./gameTicTacToe/ticTacToe";

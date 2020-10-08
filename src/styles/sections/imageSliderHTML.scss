@@ -1,0 +1,8 @@
+.image-slider {
+    &__item-img.active {
+        display: block;
+    }
+    &__item-img {
+        display: none;
+    }
+}

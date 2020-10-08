@@ -35,11 +35,11 @@ class ImageSlider {
   }
 
   eventListener() {
+    this._imageContainer.src = "img/21472-trava_makro.jpg";
     document.addEventListener("click", (e) => {
       const target = e.target.dataset.slider1;
       const leftElement = this.findElement("[data-slider1='left']");
       const rightElement = this.findElement("[data-slider1='right']");
-      console.log(target);
       if (target === "left") this.leftAction(leftElement, rightElement);
       if (target === "right") this.rightAction(leftElement, rightElement);
     });
@@ -48,9 +48,9 @@ class ImageSlider {
   leftAction(leftElement, rightElement) {
     this._iterator--;
     if (this._iterator === -1) {
-      leftElement.style.display = "none";
+      //leftElement.style.display = "none";
       rightElement.style.display = "block";
-      this._iterator = 0;
+      this._iterator = this._base.length - 1;
     }
     rightElement.style.display = "block";
     this._imageContainer.src = this._base[this._iterator];
@@ -58,11 +58,11 @@ class ImageSlider {
   rightAction(leftElement, rightElement) {
     this._iterator++;
     if (this._iterator === this._base.length) {
-      leftElement.style.display = "none";
+      //leftElement.style.display = "none";
       rightElement.style.display = "block";
-      this._iterator = this._base.length - 1;
+      this._iterator = 0;
     }
-    rightElement.style.display = "block";
+    leftElement.style.display = "block";
     this._imageContainer.src = this._base[this._iterator];
   }
 
