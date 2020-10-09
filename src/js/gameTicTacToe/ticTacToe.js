@@ -52,10 +52,10 @@ class TicTacToe {
 
   eventListener() {
     document.addEventListener("click", (e) => {
-      const target = e.target.tagName.toLowerCase();
+      const target = e.target.dataset.ticTacToe;
       const element = e.target;
       if (element.innerHTML) return;
-      if (target === "td") this.start(element);
+      if (target === "cell") this.start(element);
     });
   }
 }

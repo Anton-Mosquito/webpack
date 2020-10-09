@@ -1174,23 +1174,32 @@
         </div>
       </section>
       <section class="row">
+        <h3 class="center-align">Tic tac toe game</h3>
         <table class="centered highlight col s8 offset-s2 tic-tac-toe" data-game-tic-tac-toe>
           <tr>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td data-tic-tac-toe='cell'></td>
+            <td data-tic-tac-toe='cell'></td>
+            <td data-tic-tac-toe='cell'></td>
           </tr>
           <tr>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td data-tic-tac-toe='cell'></td>
+            <td data-tic-tac-toe='cell'></td>
+            <td data-tic-tac-toe='cell'></td>
           </tr>
           <tr>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td data-tic-tac-toe='cell'></td>
+            <td data-tic-tac-toe='cell'></td>
+            <td data-tic-tac-toe='cell'></td>
           </tr>
         </table>
+      </section>
+      <section class="row">
+        <h3 class="center-align">Game change color</h3>
+        <table class="centeren highlight col s8 offset-s2 change-color" data-game-change-color></table>
+        <form class="input-field col s2">
+          <input placeholder="Placeholder"  class="center-align black-text" id="clickCounter" type="text"  disabled  data-game-change-color-counter>
+          <label for="clickCounter">Counter of clicks</label>
+        </form>
       </section>
     </main>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>

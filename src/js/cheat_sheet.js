@@ -68,3 +68,27 @@ const checkLastDayOfMonthAndLeapYear = (year, month = 2, day = 0) => {
     : console.log(`This year isn't a leap`);
 };
 // checkLastDayOfMonthAndLeapYear(2100);
+
+const checkTypeOfInSteroid = () => {
+  const arr = [];
+  const obj = {};
+  const number = 4;
+  const str = "123123";
+  const nul = null;
+  const undef = undefined;
+  const nan = NaN; /*!! невозможно проверить только через isNaN() */
+  const bool = true;
+  const char = Symbol();
+  console.log({}.toString.call(arr));
+  console.log({}.toString.call(obj));
+  console.log({}.toString.call(number));
+  console.log({}.toString.call(str));
+  console.log({}.toString.call(nul));
+  console.log({}.toString.call(undef));
+  console.log({}.toString.call(nan));
+  console.log({}.toString.call(bool));
+  console.log({}.toString.call(char));
+  console.log({}.toString.call(window));
+  console.log({}.toString.call(new XMLHttpRequest()));
+};
+//checkTypeOfInSteroid();
