@@ -1195,11 +1195,37 @@
       </section>
       <section class="row">
         <h3 class="center-align">Game change color</h3>
-        <table class="centeren highlight col s8 offset-s2 change-color" data-game-change-color></table>
+        <table class="col s8 offset-s2 change-color" data-game-change-color></table>
         <form class="input-field col s2">
           <input placeholder="Placeholder"  class="center-align black-text" id="clickCounter" type="text"  disabled  data-game-change-color-counter>
           <label for="clickCounter">Counter of clicks</label>
         </form>
+      </section>
+      <section class="row">
+        <h3 class="center-align">Game Find the number</h3>
+        <table class="centeren highlight col s8 offset-s2 find-color" data-game-find-number></table>
+      </section>
+      <section class="row">
+        <h3 class="center-align">Calendar</h3>
+        <div class="col s6 offset-s3 center flow-text" data-info-block>Jan 2020</div>
+        <table class="centered highlight col s6 offset-s3 calendar" data-calendar>
+          <thead>
+            <tr>
+              <th>Mo</th>
+              <th>Tu</th>
+              <th>We</th>
+              <th>Th</th>
+              <th>Fr</th>
+              <th>Sa</th>
+              <th>Su</th>
+            </tr>
+          </thead>
+          <tbody data-insert-days></tbody>
+        </table>
+        <div class="calendar-navigation">
+          <button data-calendar-navigation='prev'>←</button>
+          <button data-calendar-navigation='next'>→</button>
+        </div>
       </section>
     </main>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>

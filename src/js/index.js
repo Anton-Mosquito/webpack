@@ -50,3 +50,5 @@ import "./Slider/imageSliderArr";
 import "./Slider/imageSliderHTML";
 import "./gameTicTacToe/ticTacToe";
 import "./game-Color-Change/gameColorChange";
+import "./game_Find_Number/gameFindNumber";
+import "./Calendar/calendar";
