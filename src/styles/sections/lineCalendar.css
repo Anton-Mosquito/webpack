@@ -1,0 +1,30 @@
+.collection-header {
+  position: relative;
+}
+
+.collection-header__previous {
+  display: inline-block;
+  position: absolute;
+  top: 20px;
+  left: 50px;
+  cursor: pointer;
+  vertical-align: top;
+}
+
+.collection-header__previous i {
+  pointer-events: none;
+}
+
+.collection-header__next {
+  display: inline-block;
+  position: absolute;
+  top: 20px;
+  right: 50px;
+  cursor: pointer;
+  vertical-align: top;
+}
+
+.collection-header__next i {
+  pointer-events: none;
+}
+/*# sourceMappingURL=lineCalendar.css.map */

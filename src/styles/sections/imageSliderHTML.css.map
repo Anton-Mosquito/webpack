@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AACK,AAAD,uBAAW,AAAA,OAAO,CAAC;EACf,OAAO,EAAE,KAAK;CACjB;;AACA,AAAD,uBAAW,CAAC;EACR,OAAO,EAAE,IAAI;CAChB",
+    "sources": [
+        "imageSliderHTML.scss"
+    ],
+    "names": [],
+    "file": "imageSliderHTML.css"
+}

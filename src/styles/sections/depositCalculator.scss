@@ -1,0 +1,9 @@
+.deposit-calculatro-output {
+    display: flex;
+    justify-content: space-between;
+    & div {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+}

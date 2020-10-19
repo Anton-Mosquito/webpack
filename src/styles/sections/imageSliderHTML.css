@@ -1,0 +1,8 @@
+.image-slider__item-img.active {
+  display: block;
+}
+
+.image-slider__item-img {
+  display: none;
+}
+/*# sourceMappingURL=imageSliderHTML.css.map */

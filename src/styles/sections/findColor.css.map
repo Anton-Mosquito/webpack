@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AACI,WADO,CACP,EAAE,CAAC;EACC,OAAO,EAAE,IAAI;EACb,UAAU,EAAE,MAAM;EAClB,MAAM,EAAE,eAAe;EACvB,MAAM,EAAE,OAAO;CAIlB;;AATL,AAMQ,WANG,CACP,EAAE,AAKG,OAAO,CAAC;EACL,UAAU,EAAE,GAAG;CAClB",
+    "sources": [
+        "findColor.scss"
+    ],
+    "names": [],
+    "file": "findColor.css"
+}

@@ -1,0 +1,19 @@
+.change-color td {
+  width: 50px;
+  height: 50px;
+  border: 1px solid black;
+  font-weight: bold;
+}
+
+.change-color td.red {
+  background: red;
+}
+
+.change-color td.green {
+  background: green;
+}
+
+.change-color td.blue {
+  background: blue;
+}
+/*# sourceMappingURL=gameChangeColor.css.map */

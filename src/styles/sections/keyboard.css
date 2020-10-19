@@ -1,0 +1,108 @@
+.keyboard {
+  display: -ms-grid;
+  display: grid;
+  grid-auto-flow: dense;
+  -ms-grid-columns: (1fr)[1];
+      grid-template-columns: repeat(1, 1fr);
+  -ms-grid-rows: (1fr)[5];
+      grid-template-rows: repeat(5, 1fr);
+  grid-gap: 0px;
+}
+
+.keyboard__container-digits {
+  display: -ms-grid;
+  display: grid;
+  grid-auto-flow: dense;
+  -ms-grid-columns: (1fr)[15];
+      grid-template-columns: repeat(15, 1fr);
+  -ms-grid-rows: (50px)[1];
+      grid-template-rows: repeat(1, 50px);
+  grid-gap: 0px;
+}
+
+.keyboard__container-first-letters-line {
+  display: -ms-grid;
+  display: grid;
+  grid-auto-flow: dense;
+  -ms-grid-columns: (1fr)[15];
+      grid-template-columns: repeat(15, 1fr);
+  -ms-grid-rows: (50px)[1];
+      grid-template-rows: repeat(1, 50px);
+  grid-gap: 0px;
+}
+
+.keyboard__container-second-letters-line {
+  display: -ms-grid;
+  display: grid;
+  grid-auto-flow: dense;
+  -ms-grid-columns: (1fr)[14];
+      grid-template-columns: repeat(14, 1fr);
+  -ms-grid-rows: (50px)[1];
+      grid-template-rows: repeat(1, 50px);
+  grid-gap: 0px;
+}
+
+.keyboard__container-thitd-letters-line {
+  display: -ms-grid;
+  display: grid;
+  grid-auto-flow: dense;
+  -ms-grid-columns: (1fr)[15];
+      grid-template-columns: repeat(15, 1fr);
+  -ms-grid-rows: (50px)[1];
+      grid-template-rows: repeat(1, 50px);
+  grid-gap: 0px;
+}
+
+.keyboard__container-service-buttons {
+  display: -ms-grid;
+  display: grid;
+  grid-auto-flow: dense;
+  -ms-grid-columns: (1fr)[10];
+      grid-template-columns: repeat(10, 1fr);
+  -ms-grid-rows: (50px)[1];
+      grid-template-rows: repeat(1, 50px);
+  grid-gap: 0px;
+}
+
+.keyboard__item {
+  text-align: center;
+  color: #fff;
+  background: #0c2835;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  font-size: 1.2rem;
+  line-height: 50px;
+}
+
+.keyboard__item-double-width {
+  grid-column: span 2;
+  color: #fff;
+  background: #0c2835;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  text-align: center;
+  font-size: 1.2rem;
+  line-height: 50px;
+  cursor: pointer;
+}
+
+.keyboard__item-double-width:active {
+  background: #74ff3b;
+  color: #111;
+}
+
+.keyboard__item-space-bar {
+  grid-column: span 8;
+  color: #fff;
+  background: #0c2835;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  text-align: center;
+  font-size: 1.2rem;
+  line-height: 50px;
+  cursor: pointer;
+}
+
+.keyboard__item-space-bar:active {
+  background: #74ff3b;
+  color: #111;
+}
+/*# sourceMappingURL=keyboard.css.map */

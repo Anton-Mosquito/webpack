@@ -1,0 +1,33 @@
+.calculator {
+  position: relative;
+  display: -ms-grid;
+  display: grid;
+}
+
+.calculator__value {
+  grid-column: span 4;
+  height: 100px;
+  text-align: right;
+  padding: 10px;
+}
+
+.calculator span {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: (50px)[1];
+      grid-template-rows: repeat(1, 50px);
+  color: #fff;
+  background-color: #0c2835;
+  place-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.calculator span:active {
+  background: #74ff3b;
+  color: #111;
+}
+/*# sourceMappingURL=calculator.css.map */

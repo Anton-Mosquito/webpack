@@ -1,0 +1,11 @@
+.find-color td {
+  padding: 20px;
+  text-align: center;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.find-color td.active {
+  background: red;
+}
+/*# sourceMappingURL=findColor.css.map */

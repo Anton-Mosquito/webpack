@@ -1227,6 +1227,37 @@
           <button data-calendar-navigation='next'>→</button>
         </div>
       </section>
+      <section class="row">
+        <h3 class="center-align">Deposit calculator</h3>
+        <div class="col s6">
+          <div class="valign-wrapper">Initial deposit
+            <div class="input-field inline">
+              <input type="number" class="validate" data-deposit='money' value='10000'>
+            </div>
+          </div>
+          <div class="valign-wrapper">Deposit term
+            <div class="input-field">
+              <select class="browser-default" data-deposit-select='true'>
+                <option value="3">3 (min)</option>
+                <option value="6">6 (half year)</option>
+                <option value="12" selected>12 (1 year)</option>
+                <option value="18">18 (1.5 year)</option>
+                <option value="24">24 (2 year)</option>
+                <option value="30">30 (2.5 year)</option>
+                <option value="36">36 (3 year)</option>
+                <option value="60">60 (5 year)</option>
+              </select>
+            </div>
+          </div>
+          <div class="valign-wrapper">Annual interest rate
+            <div class="input-field inline">
+              <input type="number" class="validate" data-deposit='percentage' value="5">
+            </div>
+          </div>
+        </div>
+        <div class="col s6 deposit-calculatro-output" deposit-calculator-container>
+        </div>
+      </section>
     </main>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="main.js"></script>
