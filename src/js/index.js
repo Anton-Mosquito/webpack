@@ -54,3 +54,7 @@ import "./game_Find_Number/gameFindNumber";
 import "./Calendar/calendar";
 import "./Deposit_calculator/depositCalculator";
 import "./Form_Pop_Up/formPopUp";
+import "./Prevent_load_Images/preventLoadImages";
+//import "./Infinity_page/infinityPage";
+import "./arrow_Scroll/arrowScroll";
+import "./Load_Image_Scroll/loadImageScroll";
