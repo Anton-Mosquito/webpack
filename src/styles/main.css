@@ -370,4 +370,43 @@
   padding: 5px 12px;
   border: 1px solid black;
 }
+
+.deposit-calculatro-output {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.deposit-calculatro-output div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.form-container {
+  z-index: 10;
+  display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+[data-load-image-scroll] {
+  height: 500px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
 /*# sourceMappingURL=main.css.map */

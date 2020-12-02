@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,eAAe,CAAC;EACZ,OAAO,EAAE,EAAE;EACX,OAAO,EAAE,IAAI;EACb,QAAQ,EAAE,KAAK;EACf,GAAG,EAAE,CAAC;EACN,MAAM,EAAE,CAAC;EACT,IAAI,EAAE,CAAC;EACP,KAAK,EAAE,CAAC;EACR,gBAAgB,EAAE,kBAAkB;CACvC",
+    "sources": [
+        "formPopUp.scss"
+    ],
+    "names": [],
+    "file": "formPopUp.css"
+}

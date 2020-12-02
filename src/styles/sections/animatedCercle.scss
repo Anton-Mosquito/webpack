@@ -1,0 +1,21 @@
+[data-animated-container] {
+    margin-top: 3rem;
+    .circle {
+        transition-property: width, height, margin-left, margin-top;
+        transition-duration: 2s;
+        position: fixed;
+        transform: translateX(-50%) translateY(-50%);
+        background-color: red;
+        border-radius: 50%;
+        width: 200px;
+        height: 200px;
+        top: 150px;
+        left: 150px;
+    }
+
+    .message-ball {
+        font-size: 20px;
+        line-height: 200px;
+        text-align: center;
+    }
+}
