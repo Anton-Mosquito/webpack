@@ -1,3 +1,5 @@
+const { functions } = require("lodash");
+
 function getSum() {
   let newArray = Array.prototype.slice.call(arguments, 0);
   return newArray.reduce((current, next) => {
@@ -356,6 +358,310 @@ const users = new IndexArray([
 /**
  *
  *Proxy Object
+ *
+ *
+ *
+ */
+
+/**
+ *
+ *Generator. Symbol iterator, for of
+ *
+ *
+ *
+ */
+
+function* strGenerator() {
+  yield "H";
+  yield "e";
+  yield "l";
+  yield "l";
+  yield "o";
+  yield "!";
+}
+
+const str = strGenerator();
+// console.log(str);
+// console.log(str.next());
+// console.log(str.next());
+// console.log(str.next().value);
+// console.log(str.next());
+// console.log(str.next());
+// console.log(str.next());
+// console.log(str.next());
+
+function* numberGen(x = 10) {
+  for (let index = 0; index < x; index++) {
+    yield index;
+  }
+}
+
+const number = numberGen(7);
+
+// console.log(number);
+// console.log(number.next());
+// console.log(number.next());
+// console.log(number.next());
+// console.log(number.next());
+// console.log(number.next());
+// console.log(number.next());
+// console.log(number.next());
+// console.log(number.next());
+
+const objIterator = {
+  [Symbol.iterator](x = 10) {
+    let i = 0;
+
+    return {
+      next() {
+        if (i < x) {
+          return {
+            value: ++i,
+            done: false,
+          };
+        } else {
+          return {
+            value: undefined,
+            done: true,
+          };
+        }
+      },
+    };
+  },
+};
+
+// const itr = iterator.gen();
+// console.log(itr.next());
+// console.log(itr.next());
+// console.log(itr.next());
+// console.log(itr.next());
+// console.log(itr.next());
+// console.log(itr.next());
+// console.log(itr.next());
+// console.log(itr.next());
+// console.log(itr.next());
+// console.log(itr.next());
+// console.log(itr.next());
+
+function* iter(x = 10) {
+  for (let index = 0; index < x; index++) {
+    yield index;
+  }
+}
+
+// for (const iterator of objIterator) {
+//   console.log(iterator);
+// }
+
+// for (const iterator of iter(6)) {
+//   console.log(iterator);
+// }
+/**
+ *
+ * Generator
+ *
+ *
+ *
+ */
+
+/**
+ *
+ * Array methods
+ *
+ *
+ *
+ */
+const people = [
+  { name: "Anton", age: 25, budget: 48000 },
+  { name: "Victor", age: 36, budget: 3000 },
+  { name: "Alena", age: 17, budget: 1000 },
+  { name: "Nastya", age: 52, budget: 5748 },
+  { name: "Vova", age: 11, budget: 90000 },
+  { name: "Denis", age: 31, budget: 6633 },
+];
+
+//ForEach
+// people.forEach(function (elementOfArray, indexOfArray, arrayPeople) {
+//   console.log("Elem", elementOfArray);
+//   console.log("Index", indexOfArray);
+//   console.log("MAssice", arrayPeople);
+// });
+
+//Map - create a new Array
+// const newPeople = people.map((elementOfArray) => {
+//   return `${elementOfArray.name} (${elementOfArray.age})`;
+// });
+// console.log(newPeople);
+
+//Filter - create new Array
+// const newPeople = people.filter((elementOfArray) => elementOfArray.age >= 18);
+// console.log(newPeople);
+
+//Reduce - create new Array
+// const amount = people.reduce((total, elementOfArray) => {
+//   return total + elementOfArray.budget;
+// }, 0);
+// console.log(amount);
+
+//Find
+// const fgdffgdf = people.find((elementOfArray) => {
+//   return elementOfArray.name === "Anton";
+// });
+// console.log(fgdffgdf);
+
+//FindIndex
+// const fgdffgdfIndex = people.findIndex((elementOfArray) => {
+//   return elementOfArray.name === "Anton";
+// });
+// console.log(fgdffgdfIndex);
+
+const amount = people
+  .filter((elem) => elem.budget > 3000)
+  .map((elem) => {
+    return {
+      info: `${elem.name} (${elem.age})`,
+      budget: Math.sqrt(elem.budget),
+    };
+  })
+  .reduce((total, elem) => total + elem.budget, 0);
+console.log(amount);
+/**
+ *
+ *  Array methods
+ *
+ *
+ *
+ */
+
+/**
+ *
+ *  Map , Set , WeekMap , WeekSet
+ *
+ *
+ *
+ */
+const obj = {
+  name: "Anton",
+  age: 42,
+  job: "Junior",
+};
+
+const entries = [
+  ["name", "Anton"],
+  ["age", 26],
+  ["job", "Junior"],
+];
+
+// console.log(Object.entries(obj));
+// console.log(Object.fromEntries(entries));
+
+const map = new Map(entries);
+
+map.set("newField", 42).set(obj, "Value of Object").set(NaN, "NaN");
+
+// map.delete("job");
+// console.log(map.has("job"));
+// console.log(map.size);
+// map.clear();
+// console.log(map.size);
+//===========================================
+// for (const [key, value] of map.entries()) {
+//   console.log(key, value);
+// }
+
+// for (const val of map.values()) {
+//   console.log(val);
+// }
+
+// for (const key of map.keys()) {
+//   console.log(key);
+// }
+
+// map.forEach((val, key, m) => {
+//   console.log(val, key, m);
+// });
+//===============================
+
+// const array = [...map] || Array.from(map);
+// console.log(array);
+
+// const mapObj = Object.fromEntries(map.entries());
+// console.log(mapObj);
+//================================
+// const usersMap = [{ name: "alex" }, { name: "lena" }, { name: "igor" }];
+// const visits = new Map();
+// visits
+//   .set(usersMap[0], new Date())
+//   .set(usersMap[1], new Date(new Date().getTime() + 1000 * 60))
+//   .set(usersMap[2], new Date(new Date().getTime() + 5000 * 60));
+
+// function lastVisit(user) {
+//   return visits.get(user);
+// }
+
+// console.log(lastVisit(usersMap[1]));
+
+const set = new Set([1, 2, 3, 3, 3, 4, 5, 5, 6]);
+set.add(10).add(20).add(30).add(20);
+// console.log(set);
+// console.log(set.has(42));
+// console.log(set.size);
+// console.log(set.delete(1));
+// set.clear();
+// console.log(set.size);
+// console.log(set.values());
+// console.log(set.keys());
+// console.log(set.entries());
+
+// for (const key of set) {
+//   console.log(key);
+// }
+//===============================
+// function uniqueValues(array) {
+//   return [...new Set(array)] || Array.from(new Set(array));
+// }
+// console.log(uniqueValues([1, 2, 3, 3, 4, 5, 6, 6, 6, 7, 8, 9, 0, 0, 0, 0, 0]));
+//=============================================================
+// let objWeekMap = { name: "weekMap" };
+// const arrWeekMap = [objWeekMap];
+// objWeekMap = null;
+// console.log(objWeekMap);
+// console.log(arrWeekMap[0]);
+// const weekMap = new WeakMap([[objWeekMap, "obj data"]]);
+// objWeekMap = null;
+// console.log(weekMap.has(objWeekMap));
+// console.log(weekMap.get(objWeekMap));
+// console.log(weekMap);
+//=========================================================
+// const cache = new WeakMap();
+// function cacheUser(user) {
+//   if (!cache.has(user)) {
+//     cache.set(user, Date.now());
+//   }
+//   return cache.get(user);
+// }
+
+// let lena = { name: "Lena" };
+// let alex = { name: "Alex" };
+// cacheUser(lena);
+// cacheUser(alex);
+
+// lena = null;
+
+// console.log(cache.has(lena));
+// console.log(cache.has(alex));
+//=================================================
+const usersWeakSet = [{ name: "alex" }, { name: "lena" }, { name: "igor" }];
+const visitsSet = new WeakSet();
+visitsSet.add(usersWeakSet[0]).add(usersWeakSet[1]);
+
+usersWeakSet.splice(1, 1);
+
+console.log(visitsSet.has(usersWeakSet[0]));
+console.log(visitsSet.has(usersWeakSet[1]));
+/**
+ *
+ *  Map , Set , WeekMap , WeekSet
  *
  *
  *
