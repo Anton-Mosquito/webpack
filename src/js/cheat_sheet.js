@@ -1,4 +1,4 @@
-const { functions } = require("lodash");
+const { functions, get, head } = require("lodash");
 
 function getSum() {
   let newArray = Array.prototype.slice.call(arguments, 0);
@@ -662,6 +662,98 @@ console.log(visitsSet.has(usersWeakSet[1]));
 /**
  *
  *  Map , Set , WeekMap , WeekSet
+ *
+ *
+ *
+ */
+
+/**
+ *
+ *  Запросы на сервер. Fetch, XMLHttpRequest (XHR), Ajax
+ *
+ *
+ *
+ */
+const requestURL = "https://jsonplaceholder.typicode.com/users";
+
+// Promise
+function sendRequest(method, url, body = null) {
+  return new Promise((resolve, reject) => {
+    const xhr = new XMLHttpRequest();
+    xhr.open(method, url);
+    xhr.responseType = "json";
+    xhr.setRequestHeader("content-type", "application/json");
+    xhr.onload = () => {
+      if (xhr.status >= 400) {
+        reject(xhr.response);
+      } else {
+        resolve(xhr.response);
+      }
+    };
+    xhr.onerror = () => {
+      reject(xhr.response);
+    };
+    xhr.send(JSON.stringify(body));
+  });
+}
+
+// sendRequest("GET", requestURL)
+//   .then((data) => console.log(data))
+//   .catch((error) => {
+//     console.log(error);
+//   });
+
+const dataForRequest = {
+  name: "Anton",
+  age: 26,
+};
+
+// sendRequest("POST", requestURL, dataForRequest)
+//   .then((data) => console.log(data))
+//   .catch((error) => {
+//     console.log(error);
+//   });
+
+// fetch
+function sendRequestFetch(method, url, body = null) {
+  const headers = {
+    "content-type": "application/json",
+  };
+  return fetch(url, {
+    method: method,
+    body: JSON.stringify(body),
+    headers: headers,
+  }).then((response) => {
+    if (response.ok) {
+      return response.json();
+    }
+    return response.json().then((error) => {
+      const e = new Error("Что-то пошло не так");
+      e.data = error;
+      throw e;
+    });
+  });
+}
+
+// sendRequestFetch("GET", requestURL)
+//   .then((data) => {
+//     console.log(data);
+//   })
+//   .catch((error) => {
+//     console.log(error);
+//   });
+
+sendRequestFetch("POST", requestURL, dataForRequest)
+  .then((data) => {
+    console.log(data);
+  })
+  .catch((error) => {
+    console.log(error);
+  });
+
+/**
+ *
+ *  Запросы на сервер. Fetch, XMLHttpRequest (XHR), Ajax
  *
  *
  *

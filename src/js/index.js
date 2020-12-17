@@ -63,3 +63,5 @@ import "./async - await/asyncAwait";
 // import "./Animated_circle_WithCallBack/circle";
 import "./Animated_circle_WithCallBack/circleWithPromise";
 import "./cheat_sheet";
+import "./RxJs/RxJs";
+import "./typeScript/index";
