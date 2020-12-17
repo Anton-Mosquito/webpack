@@ -758,3 +758,81 @@ sendRequestFetch("POST", requestURL, dataForRequest)
  *
  *
  */
+
+/**
+ *
+ *  Rest и Spread
+ *
+ *
+ *
+ */
+
+const citiesUkraine = ["Kiev", "Cherkassy", "Odessa", "Lvov"];
+const citiesEurope = ["Berlin", "Praga", "Paris"];
+
+const citiesUkraineWithPopulation = {
+  Kiev: 4,
+  Cherkassy: 0.3,
+  Odessa: 1,
+  Lvov: 2,
+};
+const citiesEuropeWithPopulation = {
+  Moscow: 26,
+  Berlin: 10,
+  Praga: 3,
+  Paris: 16,
+};
+
+// Spread
+//Array
+// console.log(...citiesUkraine);
+// console.log(...citiesEurope);
+// const allCities = citiesEurope.concat(citiesUkraine);
+// const allCities = [...citiesUkraine, "Los-Angelos", ...citiesEurope];
+// console.log(allCities);
+
+//Object
+// console.log({ ...citiesUkraineWithPopulation });
+// console.log({ ...citiesUkraineWithPopulation, ...citiesEuropeWithPopulation });
+
+//Practise
+// const numbers = [1, 432, 2, 6, 85];
+// console.log(Math.max.apply(null, numbers));
+// console.log(Math.max(...number));
+
+// const divs = document.querySelectorAll("div");
+// const nodes = [...divs];
+// console.log(divs, Array.isArray(divs));
+// console.log(nodes, Array.isArray(nodes));
+
+//Rest
+// const sum = (a, b, ...rest) => {
+//   console.log(rest);
+//   return a + b + rest.reduce((acc, next) => acc + next, 0);
+// };
+// const numbers = [1, 432, 2, 6, 85];
+// console.log(sum(...numbers));
+
+// const aasda = numbers[0];
+// const basdasd = numbers[1];
+
+// const [aasda, basdasd, ...other] = numbers;
+// console.log(aasda, basdasd, other);
+
+const personMax = {
+  name: "Lox",
+  age: 788,
+  city: "Uj",
+  country: "Bolivia",
+};
+
+const { name, age, ...adress } = personMax;
+
+console.log(name, age, adress);
+/**
+ *
+ *  Rest и Spread
+ *
+ *
+ *
+ */
