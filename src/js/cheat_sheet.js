@@ -826,12 +826,73 @@ const personMax = {
   country: "Bolivia",
 };
 
-const { name, age, ...adress } = personMax;
+// const { name, age, ...adress } = personMax;
 
-console.log(name, age, adress);
+// console.log(name, age, adress);
 /**
  *
  *  Rest и Spread
+ *
+ *
+ *
+ */
+
+/**
+ *
+ *  Destructing
+ *
+ *
+ *
+ */
+
+function calcValues(a, b) {
+  return [a + b, a - b, a * b, a / b];
+}
+
+// Array
+// const result = calcValues(42, 10);
+// const sum = result[0];
+// const sub = result[1];
+// console.log(sum, sub);
+// const [sum, sub] = result;
+// console.log(sum, sub);
+
+// const [sum, sub = "devision equal undefined", mult, ...other] = calcValues(
+//   42,
+//   10
+// );
+// console.log(sum, sub, mult, other);
+
+// Object
+const personDestructiing = {
+  name: "Anton",
+  age: 40,
+  adress: {
+    country: "Ukraine",
+    city: "Kiev",
+  },
+};
+
+// const {
+//   name: firstName = "No name",
+//   age,
+//   car = "No car",
+//   adress: { country, city: hometown },
+// } = personDestructiing;
+// console.log(firstName, age, car, country, hometown);
+
+// const { name, ...info } = personDestructiing;
+// console.log(name, info);
+
+function logPerson({ name: firtsName = "default", age }) {
+  console.log(firtsName + " " + age);
+}
+
+logPerson(personDestructiing);
+
+/**
+ *
+ *  Destructing
  *
  *
  *
