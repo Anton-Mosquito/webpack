@@ -449,6 +449,21 @@ function* iter(x = 10) {
   }
 }
 
+const objectWithGenerator = {
+  a: 1,
+  b: 2,
+  c: 3,
+  [Symbol.iterator]: function* () {
+    for (const key in this) {
+      yield this[key];
+    }
+  },
+};
+
+for (const iterator of objectWithGenerator) {
+  console.log(iterator);
+}
+
 // for (const iterator of objIterator) {
 //   console.log(iterator);
 // }
@@ -893,6 +908,236 @@ logPerson(personDestructiing);
 /**
  *
  *  Destructing
+ *
+ *
+ *
+ */
+
+/**
+ *
+ *  Local Storage
+ *
+ *
+ *
+ */
+
+const myNumber = 42;
+
+// localStorage.removeItem("number");
+// console.log(localStorage.getItem("number"));
+// localStorage.setItem("number", myNumber);
+// console.log(localStorage.getItem("number"));
+
+// localStorage.clear();
+
+const objLocal = {
+  name: "Max",
+  age: 20,
+};
+
+// localStorage.setItem("person", JSON.stringify(objLocal));
+
+const raw = localStorage.getItem("person");
+const personLocal = JSON.parse(raw);
+personLocal.name = "Antonio";
+
+// console.log(personLocal);
+
+window.addEventListener("storage", (event) => {
+  console.log(event);
+});
+
+/**
+ *
+ *  Local Storage
+ *
+ *
+ *
+ */
+
+/**
+ *
+ *  Prototype, this , context
+ *
+ *
+ *
+ */
+
+const Animal = function (options) {
+  this.name = options.name;
+  this.color = options.color;
+};
+
+Animal.prototype.voice = function () {
+  console.log("Base voice from", this.name);
+};
+
+// console.log(Animal.prototype);
+
+const dog = new Animal({ name: "Rex", color: "#fff" });
+// console.log(dog);
+// console.log(dog.voice());
+
+const Cat = function (options) {
+  Animal.apply(this, arguments);
+  this.hasTail = options.hasTail;
+  this.type = "cat";
+};
+
+Cat.prototype = Object.create(Animal.prototype);
+Cat.prototype.constructor = Cat;
+
+Animal.prototype.voice = function () {
+  console.log("This sound goes from ", this.name);
+};
+
+Cat.prototype.voice = function () {
+  Animal.prototype.voice.apply(this, arguments);
+  console.log(this.name, " says meaw");
+};
+
+const cat = new Cat({
+  name: "Murzik",
+  color: "#000",
+  hasTail: true,
+});
+
+class Animal1 {
+  constructor() {
+    this.name = options.name;
+    this.color = options.color;
+  }
+
+  voice() {
+    console.log("Voice from class", this.name);
+  }
+}
+
+// const dog1 = new Animal1({ name: "Lolik", color: "#fff" });
+
+class Cat1 extends Animal1 {
+  constructor(options) {
+    super(options);
+    this.hasTail = options.hasTail;
+    this.type = "cat";
+  }
+
+  voice() {
+    super.voice();
+    console.log(this.name, " says meaw");
+  }
+}
+
+// const cat1 = new Cat({ name: "Lola", color: "#fff", hasTail: true });
+
+// console.log(cat);
+// console.log(cat.voice());
+
+//Examples
+Object.prototype.print = function () {
+  console.log("I am object ", this);
+};
+
+cat.print();
+
+Array.prototype.myMap = function () {
+  console.log("Array to map", this);
+  return this.map.apply(this, arguments);
+};
+console.log([1, 2, 3, 4].myMap((x) => x ** 2));
+
+String.prototype.toTag = function (tagName) {
+  return `<${tagName}>${this}</${tagName}>`;
+};
+
+console.log("eminem".toTag("strong"));
+
+Number.prototype.toBigInt = function () {
+  return BigInt(this);
+};
+
+const numberBigInt = 42;
+console.log(numberBigInt.toBigInt());
+/**
+ *
+ *  Prototype, this , context
+ *
+ *
+ *
+ */
+
+/**
+ *
+ * TDD , and Promise
+ *
+ *
+ *
+ */
+const moop = () => {};
+class MyPromise {
+  constructor(executor) {
+    this.queue = [];
+    this.errorHandler = moop;
+    this.finnalyHndler = moop;
+
+    try {
+      executor.call(null, this.onResolve.bind(this), this.onReject.bind(this));
+    } catch (e) {
+      this.errorHandler(e);
+    } finally {
+      this.finnalyHndler();
+    }
+  }
+
+  onResolve(data) {
+    this.queue.forEach((callback) => {
+      data = callback(data);
+    });
+
+    this.finnalyHndler();
+  }
+
+  onReject(error) {
+    this.errorHandler(error);
+    this.finnalyHndler();
+  }
+
+  then(fn) {
+    this.queue.push(fn);
+    return this;
+  }
+
+  catch(fn) {
+    this.errorHandler = fn;
+    return this;
+  }
+
+  finally(fn) {
+    this.finnalyHndler = fn;
+    return this;
+  }
+}
+
+const promise = new MyPromise((resolve, reject) => {
+  setTimeout(() => {
+    resolve("NgRx");
+    // reject("Some Error");
+  }, 150);
+});
+
+promise
+  .then((course) => {
+    console.log("Promise ", course.toUpperCase());
+  })
+  .then((title) => console.log(title))
+  .catch((error) => {
+    console.log("Error", error);
+  })
+  .finally(() => console.log("finnaly"));
+
+/**
+ *
+ *  TDD , and Promise
  *
  *
  *

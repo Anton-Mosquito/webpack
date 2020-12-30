@@ -65,3 +65,5 @@ import "./Animated_circle_WithCallBack/circleWithPromise";
 import "./cheat_sheet";
 import "./RxJs/RxJs";
 import "./typeScript/index";
+import "./Algoritms/algoritm";
+import "./ES6,ES7,ES8+/ES6+";
