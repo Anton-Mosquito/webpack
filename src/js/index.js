@@ -66,4 +66,4 @@ import "./cheat_sheet";
 import "./RxJs/RxJs";
 import "./typeScript/index";
 import "./Algoritms/algoritm";
-import "./ES6,ES7,ES8+/ES6+";
+import "./ES6,ES7,ES8+/1 - let,const";

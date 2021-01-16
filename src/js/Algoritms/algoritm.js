@@ -98,6 +98,43 @@ function fact3(n) {
   return result;
 }
 console.log(fact3(4), fact3(5));
+
+//Ребенок поднимается по лестнице из n ступеней.
+// За один шаг он может переместиться на один, два или три ступеньки.
+//Найдит количество возможных вариантов перемещения ребенка по лестнице.
+// if(n <0) return 0;
+// if(n === 0) return 1;
+//c[n]= c[n-1] + c[]
+let hit = 0;
+let miss = 0;
+function countWays(n, cashe = []) {
+  if (n < 0) {
+    miss++;
+    return 0;
+  }
+  if (!cashe[n]) {
+    miss++;
+    if (n === 0) {
+      cashe[n] = 1;
+    } else {
+      cashe[n] =
+        countWays(n - 1, cashe) +
+        countWays(n - 2, cashe) +
+        countWays(n - 3, cashe);
+    }
+    return cashe[n];
+  } else {
+    hit++;
+    return cashe[n];
+  }
+}
+// 0(3^n)
+// 0(n) memory
+// console.log(countWays(3));
+// console.log(countWays(2));
+// console.log(countWays(1));
+// console.log(countWays(12));
+console.log(countWays(12), miss, hit);
 /**
  *
  *  рекурсия

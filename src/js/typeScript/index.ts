@@ -146,3 +146,174 @@ userClass.setTitle(false);
  *
  *
  */
+
+ 
+ /**
+ *
+ *  Classes inheritance
+ *
+ *
+ *
+ */
+
+class UserClass1 {
+    private isTeacher? : boolean;
+    protected age : number = 30;
+
+    constructor(public name: string, public job : string){
+    }
+
+    public getAge() : number{
+        return this.age
+    }
+
+}
+
+class WFM extends UserClass1 {
+    constructor(job:string) {
+        super('WFM',job);
+        this.age = 100;
+    }
+
+    // getAge() : string {
+    //     return 'Hello' + this.age;/// нельзя изменить тип возвращаемого значения
+    // }
+}
+
+const userClass1 = new WFM('frontEnd');
+console.log(userClass1);
+console.log(userClass1.getAge());
+
+ 
+ /**
+ *
+ *  Classes inheritance
+ *
+ *
+ *
+ */
+
+
+  /**
+ *
+ *  Classes abstract
+ *
+ *
+ *
+ */
+abstract class Car{
+    model? : string;
+    year: number = 2020;
+
+    abstract logInfo(info:string): void;
+
+    getCarYear() :number {
+        return this.year;
+    }
+}
+
+class Mercedes extends Car {
+    logInfo(info:string): void {
+        console.log(info);
+    }
+}
+
+const car = new Mercedes();
+console.log(car);
+car.logInfo('drrrnn');
+console.log(car.getCarYear());
+
+  /**
+ *
+ *  Classes abstract
+ *
+ *
+ *
+ */
+
+
+   /**
+ *
+ *  Interface
+ *
+ *
+ *
+ */
+// interface ILength {
+//     length :number
+// }
+
+// function getLength(valiable: ILength ) :void{
+//     console.log(valiable.length);
+// }
+
+// const box = {
+//     name : 'WFV',
+//     length : 20
+// }
+
+// getLength(box);
+
+// interface IUser {
+//     name : string;
+//     age? : number;
+//     logInfo(info:string) : void;
+// }
+
+// interface IgetYear {
+//     getYear() :number;
+// }
+
+// const userInterface : IUser = {
+//     name : 'WFV',
+//     age : 20,
+//     logInfo(info){
+//         console.log('Info', info);
+//     }
+// };
+
+// class UserInterface implements IUser, IgetYear {
+//     name :string = 'Some name';
+//     // job : string;
+//     // newAge: number;
+//     logInfo(info:string) :void{
+//         console.log('Info', info);
+//     }
+
+//     getYear() :number{
+//         return 200;
+//     }
+// }
+
+
+   /**
+ *
+ *  Interface
+ *
+ *
+ *
+ */
+
+    /**
+ *
+ *  Generic
+ *
+ *
+ *
+ */
+function getter(data:any) {
+    return data
+}
+
+console.log(getter('WebForMyself').length);
+console.log(getter(100));
+
+
+
+    /**
+ *
+ *  Generic
+ *
+ *
+ *
+ */

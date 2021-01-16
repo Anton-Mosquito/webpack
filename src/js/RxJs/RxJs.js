@@ -1,4 +1,15 @@
-import { Observable, fromEvent, of, interval, timer, range, from } from "rxjs";
+import {
+  Observable,
+  fromEvent,
+  of,
+  interval,
+  timer,
+  range,
+  from,
+  merge,
+  pipe,
+  concat,
+} from "rxjs";
 import {
   map,
   filter,
@@ -15,6 +26,14 @@ import {
   takeUntil,
   debounceTime,
   distinctUntilChanged,
+  buffer,
+  bufferTime,
+  bufferCount,
+  defaultIfEmpty,
+  every,
+  delay,
+  mergeAll,
+  concatAll,
 } from "rxjs/operators";
 
 // Создание стрима
@@ -118,13 +137,13 @@ const from$ = from(maps);
 from$.subscribe((value) => console.log(value));
 
 // Создание стрима из промисов
-const delay = (ms = 1000) => {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve(ms);
-    }, ms);
-  });
-};
+// const delay = (ms = 1000) => {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       resolve(ms);
+//     }, ms);
+//   });
+// };
 
 // delay(3000).then(() => {
 //   console.log("Promise resolve!");
@@ -248,6 +267,122 @@ of(1, 4, "Hello", "World");
 /**
  *
  *  Операторы для филтрации
+ *
+ *
+ *
+ */
+
+/**
+ *
+ *  буферы
+ *
+ *
+ *
+ */
+
+// interval(500)
+//   .pipe(buffer(interval(2000)), take(3))
+//   .subscribe((e) => console.log(e));
+
+// interval(500)
+//   .pipe(bufferTime(2000), take(4))
+//   .subscribe((e) => console.log(e));
+
+// range(0, 40)
+//   .pipe(bufferCount(10))
+//   .subscribe((e) => console.log(e));
+
+interval(1000)
+  .pipe(
+    buffer(fromEvent(btn, "click")),
+    map((x) => x.length)
+  )
+  .subscribe((e) => console.log(e));
+/**
+ *
+ *  буферы
+ *
+ *
+ *
+ */
+
+/**
+ *
+ *  utilites
+ *
+ *
+ *
+ */
+// of(232)
+//   .pipe(defaultIfEmpty("I am empty stream")) // выводит собщение если стрим пустой
+//   .subscribe((e) => console.log(e));
+
+// from([1, 2, 3, 4, 5])
+//   .pipe(
+//     skipWhile((x) => x <= 3),
+//     every((x) => x > 2)
+//   )
+//   .subscribe((e) => console.log(e));
+
+// range(1, 3)
+//   .pipe(delay(500)) // задержка на указаное количество секунд
+//   .subscribe((e) => console.log(e));
+
+// range(1, 3)
+//   .pipe(
+//     map((x) => x + 1),
+//     let(observer)
+//     )
+//   .subscribe((e) => console.log(x));
+/**
+ *
+ *  utilites
+ *
+ *
+ *
+ */
+
+/**
+ *
+ *  Совмещение стримов Merge, Concat
+ *
+ *
+ *
+ */
+// const stream1$ = of("Hello");
+// const stream2$ = of("World");
+
+// merge(stream1$, stream2$).subscribe((e) => console.log(e)); // обьединени стримов
+
+// const stream1$ = interval(1000).pipe(map((x) => "stream 1 " + x));
+// const stream2$ = interval(500).pipe(map((x) => "stream 2 " + x));
+
+// merge(stream1$, stream2$)
+//   .pipe(take(12))
+//   .subscribe((e) => console.log(e));
+
+// range(1, 3) // 1, 2, 3
+//   .pipe(
+//     map((x) => range(1, 3)),
+//     mergeAll()               /// обьединение n-количество стримов в один
+//   )
+//   .subscribe((e) => console.log(e));
+
+// const stream1$ = from([1, 2, 3]);
+// const stream2$ = from([4, 5, 6]);
+
+// concat(stream1$, stream2$).subscribe((e) => console.log(e)); // обьединение стримов масивов
+
+// range(1, 3) // 1, 2, 3
+//   .pipe(
+//     map((x) => range(x, 3)),
+//     concatAll() /// обьединение стримов в один, соблюдает правильную последовательность, merge работет грубо говоря асинхроно и как прийдется
+//   )
+//   .subscribe((e) => console.log(e));
+
+/**
+ *
+ *  Совмещение стримов Merge, Concat
  *
  *
  *
