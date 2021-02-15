@@ -142,3 +142,255 @@ console.log(countWays(12), miss, hit);
  *
  *
  */
+
+/**
+ *
+ * хеш-таблицы
+ *
+ *
+ *
+ */
+class HashTable {
+  constructor() {
+    this.store = new Array(10);
+  }
+
+  hash(key) {
+    let sum = 0;
+
+    for (let index = 0; index < key.length; index++) {
+      sum += key.charCodeAt(index);
+    }
+    return sum % this.store.length;
+  }
+
+  add(key, value) {
+    this.store[this.hash(key)] = this.store[this.hash(key)] || [];
+    this.store[this.hash(key)].push({ key, value });
+  }
+
+  get(key) {
+    return this.store[this.hash(key)].find((item) => item.key === key).value;
+  }
+}
+
+const dict = new HashTable();
+dict.add("ab", "1");
+dict.add("ba", "2");
+console.log(dict.get("ab"), dict.get("ba"));
+/**
+ *
+ *  хеш-таблицы
+ *
+ *
+ *
+ */
+
+/**
+ *
+ *  обход дерева на практике
+ *
+ *
+ *
+ */
+// document.body.addEventListener("click", (e) => {
+//   const attr = e.target.dataset.tree;
+//   if (attr === "check") {
+//     const checked = e.target.checked;
+//     walk(e.target, function (child) {
+//       child.checked = checked;
+//     });
+//   }
+// });
+
+// function walk(root, callback) {
+//   if (root.type === "checkbox") {
+//     callback(root);
+//     const next = root.parent.children[1];
+//     if (next && next.classList.contains("tree")) {
+//       walk(next, callback);
+//     }
+//   } else {
+//     [...root.children].forEach((child) => {
+//       walk(child, callback);
+//     });
+//   }
+// }
+/**
+ *
+ *  обход дерева на практике
+ *
+ *
+ *
+ */
+
+/**
+ *
+ *   связные списки на примере LRU Cache
+ *
+ *
+ *
+ */
+class ListNode {
+  constructor(key, value) {
+    this.key = key;
+    this.value = value;
+    this.prev = null;
+    this.next = null;
+  }
+}
+
+class LinkedList {
+  constructor() {
+    this.length = 0;
+    this.head = this.tail = null;
+  }
+  push(node) {
+    if (!this.head) {
+      this.head = this.tail = node;
+    } else {
+      this.tail.next = node;
+      node.prev = this.tail;
+      this.tail = node;
+    }
+    this.length++;
+  }
+  shift() {
+    const headr = this.head;
+    this.splice(this.head);
+    return head;
+  }
+  splice(node) {
+    // всего одна нода в списке
+    if (!node.prev && !node.next) {
+      this.head = this.tail = null;
+      // это хвост
+    } else if (!node.next) {
+      this.tail = node.prev;
+      this.tail.next = null;
+      // это голова
+    } else if (!node.prev) {
+      this.head = node.next;
+      this.head.prev = null;
+      // где-то в середине...
+    } else {
+      // prev <-> next
+      const next = node.next;
+      const prev = node.prev;
+      prev.next = next;
+      next.prev = prev;
+      node.next = node.prev = null;
+    }
+    this.length--;
+  }
+}
+
+class LRUCashe {
+  constructor(capacity) {
+    this.capacity = capacity;
+    this.q = [];
+    this.m = {};
+  }
+
+  get(key) {
+    if (this.m[key]) {
+      return -1;
+    }
+    const value = this.m[key].value;
+    this.put(key.value);
+    return value;
+  }
+
+  put(key, value) {
+    if (this.m[key]) {
+      this.q.splice(
+        this.q.findIndex((node) => node === this.m[key]),
+        1
+      );
+      this.m[key] = null;
+    }
+    this.q.push({ key, value });
+    this.m[key] = this.q[this.q.length - 1];
+    if (this.q.length > this.capacity) {
+      this.m[this.q.shift().key] = null;
+    }
+  }
+}
+
+class LRUCache2 {
+  constructor(capacity) {
+    this.capacity = capacity;
+    this.q = new LinkedList();
+    this.m = {};
+  }
+  get(key) {
+    if (!this.m[key]) {
+      return -1;
+    }
+    const value = this.m[key].value;
+    this.put(key, value);
+    return value;
+  }
+  put(key, value) {
+    if (this.m[key]) {
+      // {key, value}
+      // x <-> x <-> x
+      this.q.splice(this.m[key]);
+      this.m[key] = null;
+    }
+    const node = new ListNode(key, value);
+    this.q.push(node);
+    this.m[key] = node;
+    if (this.q.length > this.capacity) {
+      this.m[this.q.shift().key] = null;
+    }
+  }
+}
+
+const cache = new LRUCashe(3);
+cache.put(1, 1);
+cache.put(2, 1);
+cache.get(2);
+cache.put(3, 1);
+cache.put(4, 1);
+console.log(cache.q);
+
+/**
+ *
+ *   связные списки на примере LRU Cache
+ *
+ *
+ *
+ */
+
+/**
+ *
+ *   Графы и их обход
+ *
+ *
+ *
+ */
+
+/**
+ *
+ *   Графы и их обход
+ *
+ *
+ *
+ */
+
+/**
+ *
+ *  Рекурсия с мемоизацией для вычисления diff'а текста
+ *
+ *
+ *
+ */
+
+/**
+ *
+ *   Рекурсия с мемоизацией для вычисления diff'а текста
+ *
+ *
+ *
+ */

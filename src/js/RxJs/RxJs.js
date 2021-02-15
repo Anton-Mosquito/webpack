@@ -9,6 +9,13 @@ import {
   merge,
   pipe,
   concat,
+  zip,
+  combineLatest,
+  onErrorResumeNext,
+  Subject,
+  BehaviorSubject,
+  ReplaySubject,
+  AsyncSubject,
 } from "rxjs";
 import {
   map,
@@ -34,68 +41,72 @@ import {
   delay,
   mergeAll,
   concatAll,
+  mergeMap,
+  concatMap,
+  withLatestFrom,
+  catchError,
 } from "rxjs/operators";
 
 // Создание стрима
-const stream$ = Observable.create((subscriber) => {
-  subscriber.next("One");
+// const stream$ = Observable.create((subscriber) => {
+//   subscriber.next("One");
 
-  setTimeout(() => {
-    subscriber.error("After 5 seconds");
-  }, 5000);
+//   setTimeout(() => {
+//     subscriber.error("After 5 seconds");
+//   }, 5000);
 
-  //   setTimeout(() => {
-  //     subscriber.complete();
-  //   }, 3000);
+//   setTimeout(() => {
+//     subscriber.complete();
+//   }, 3000);
 
-  setTimeout(() => {
-    subscriber.next("After 2 seconds");
-  }, 2000);
+//   setTimeout(() => {
+//     subscriber.next("After 2 seconds");
+//   }, 2000);
 
-  subscriber.next("Two");
-});
+//   subscriber.next("Two");
+// });
 
-stream$.subscribe(
-  (data) => {
-    console.log("Subscribe : ", data);
-  },
-  (err) => {
-    console.log("Error", err);
-  },
-  () => {
-    console.log("Complite");
-  }
-);
+// stream$.subscribe(
+//   (data) => {
+//     console.log("Subscribe : ", data);
+//   },
+//   (err) => {
+//     console.log("Error", err);
+//   },
+//   () => {
+//     console.log("Complite");
+//   }
+// );
 
 //Создание события
-const btn = document.querySelector('[data-rxjs="click"]');
-const btn$ = fromEvent(btn, "click");
+// const btn = document.querySelector('[data-rxjs="click"]');
+// const btn$ = fromEvent(btn, "click");
 
-btn$.subscribe((event) => {
-  console.log(event);
-});
+// btn$.subscribe((event) => {
+//   console.log(event);
+// });
 
-const input = document.querySelector('[data-rxjs="input"]');
-const input$ = fromEvent(input, "keyup");
+// const input = document.querySelector('[data-rxjs="input"]');
+// const input$ = fromEvent(input, "keyup");
 
 // input$.subscribe((event) => {
 //   console.log(event);
 // });
 
 // создание стрима из обычных данных
-const createSubscribe = (name) => {
-  return {
-    next(x) {
-      console.log(name, ": ", x);
-    },
-    error(error) {
-      console.log(name, ": ", error);
-    },
-    complete(x) {
-      console.log(name, ": Completed");
-    },
-  };
-};
+// const createSubscribe = (name) => {
+//   return {
+//     next(x) {
+//       console.log(name, ": ", x);
+//     },
+//     error(error) {
+//       console.log(name, ": ", error);
+//     },
+//     complete(x) {
+//       console.log(name, ": Completed");
+//     },
+//   };
+// };
 // const of$ = of(5, 8, 3, "8", "string", [4, 2, "65"]).subscribe(
 //   createSubscribe("of")
 // );
@@ -127,14 +138,14 @@ const createSubscribe = (name) => {
 // ];
 
 // const set = new Set([1, 2, 3, "4", "5", { id: 6 }]);
-const maps = new Map([
-  [1, 2],
-  [3, 4],
-  [5, 6],
-]);
+// const maps = new Map([
+//   [1, 2],
+//   [3, 4],
+//   [5, 6],
+// ]);
 
-const from$ = from(maps);
-from$.subscribe((value) => console.log(value));
+// const from$ = from(maps);
+// from$.subscribe((value) => console.log(value));
 
 // Создание стрима из промисов
 // const delay = (ms = 1000) => {
@@ -189,7 +200,7 @@ from$.subscribe((value) => console.log(value));
 //   });
 
 // Операторы для выбора
-of(1, 4, "Hello", "World");
+// of(1, 4, "Hello", "World");
 // .pipe(first())// first elemnt from array
 // .pipe(last()) // last element from array
 // .pipe(
@@ -292,12 +303,12 @@ of(1, 4, "Hello", "World");
 //   .pipe(bufferCount(10))
 //   .subscribe((e) => console.log(e));
 
-interval(1000)
-  .pipe(
-    buffer(fromEvent(btn, "click")),
-    map((x) => x.length)
-  )
-  .subscribe((e) => console.log(e));
+// interval(1000)
+//   .pipe(
+//     buffer(fromEvent(btn, "click")),
+//     map((x) => x.length)
+//   )
+//   .subscribe((e) => console.log(e));
 /**
  *
  *  буферы
@@ -383,6 +394,186 @@ interval(1000)
 /**
  *
  *  Совмещение стримов Merge, Concat
+ *
+ *
+ *
+ */
+
+/**
+ *
+ *  Совмещение стримов MergeMap, ConcatMap
+ *
+ *
+ *
+ */
+
+// of("Hello")
+//   .pipe(
+//     mergeMap((x) => {
+//       return of(x + " World 1"); // mergeMap обьединени стримов
+//     })
+//   )
+//   .subscribe((e) => console.log(e));
+
+// const pronise = (data) => {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       resolve(data + " wish you good luck!");
+//     }, 2000);
+//   });
+// };
+
+// of("WFM")
+//   .pipe(
+//     mergeMap((x) => {
+//       return pronise(x);
+//     })
+//   )
+//   .subscribe((e) => console.log(e));
+
+// range(1, 10)
+//   .pipe(
+//     concatMap((x, i) => {
+//       return interval(100).pipe(
+//         take(x),
+//         map((q) => i)
+//       );
+//     })
+//   )
+//   .subscribe((e) => console.log(e));
+
+/**
+ *
+ *  Совмещение стримов MergeMap, ConcatMap
+ *
+ *
+ *
+ */
+
+/**
+ *
+ *  Совмещение стримов Совмещение стримов Zip, CombineLatest
+ *
+ *
+ *
+ */
+
+// const firstStr$ = of("Hello");
+// const secondStr$ = of("World");
+
+// zip(firstStr$.pipe(delay(2000)), secondStr$.pipe(delay(5000))).subscribe(
+//   (e) => {
+//     console.log(e);
+//   } /// ZIP служит для обьединения потоков, ждет пока все потоки выпонятся, роботает с асинхронными потоками
+// );
+
+// const interval1$ = interval(1000);
+// zip(interval1$, interval1$.pipe(take(3)), of("wfm")).subscribe((e) => {
+//   console.log(e); // выполнится один раз так как значение из ОФ одно
+// });
+
+// const firstStr$ = interval(1000);
+// const secondStr$ = interval(500);
+
+// firstStr$.pipe(withLatestFrom(secondStr$)).subscribe((e) => {
+//   console.log(e); /// получает значение второго стрима
+// });
+
+// const t1$ = timer(1000, 2000);
+// const t2$ = timer(2000, 2000);
+// const t3$ = timer(3000, 2000);
+
+// combineLatest(t1$, t2$, t3$) /// обьединет разные асинхронные действия
+//   .pipe(take(5))
+//   .subscribe((e) => {
+//     console.log(e);
+//   });
+/**
+ *
+ *  Совмещение стримов Совмещение стримов Zip, CombineLatest
+ *
+ *
+ *
+ */
+
+/**
+ *
+ *  Обработка ошибок
+ *
+ *
+ *
+ */
+
+// const ere$ = interval(500)
+//   .pipe(
+//     take(2),
+//     catchError((e) => of(e))
+//   )
+//   .subscribe((x) => console.log(x));
+
+// onErrorResumeNext(ere).subscribe((x) => console.log(x));
+/**
+ *
+ *  Обработка ошибок
+ *
+ *
+ *
+ */
+
+/**
+ *
+ *  Классы Subject
+ *
+ *
+ *
+ */
+// const subject$ = new Subject();
+
+// subject$.pipe().subscribe((e) => console.log("Subject", e));
+
+// subject$.next(1);
+
+// subject$.next(2);
+
+// setTimeout(() => {
+//   subject$.next(3);
+//   subject$.complete();
+// }, 2000);
+
+// interval(1000).pipe().subscribe(subject$);
+
+// subject$.pipe().subscribe((e) => console.log("Subject 1", e));
+
+// setTimeout(() => {
+//   subject$.pipe().subscribe((e) => console.log("Subject 2", e));
+// }, 2000);
+
+// const behaviorSubject$ = new BehaviorSubject("WFM");
+
+// behaviorSubject$.subscribe((e) => console.log("BehaviorSubject ", e));
+
+// behaviorSubject$.next("Hello!");
+// behaviorSubject$.complete();
+
+// const replaySubject$ = new ReplaySubject(2);
+
+// replaySubject$.next(1);
+// replaySubject$.next(2);
+// replaySubject$.next(3);
+// replaySubject$.complete();
+
+// replaySubject$.subscribe((e) => console.log("ReplaySubject ", e));
+
+// const asyncSubject$ = new AsyncSubject(2);
+
+// asyncSubject$.next(1);
+// asyncSubject$.next("WFM");
+// asyncSubject$.complete();
+
+// asyncSubject$.subscribe((e) => console.log("AsyncSubject ", e));
+/**
+ *
+ *  Классы Subject
  *
  *
  *

@@ -1,4 +1,3 @@
-import { from } from "rxjs";
 // import myLog, { COLOR, compute } from "./module";
 
 // console.log(compute(1, 2));

@@ -1,0 +1,26 @@
+[data-animated-container] {
+  margin-top: 3rem;
+}
+
+[data-animated-container] .circle {
+  -webkit-transition-property: width, height, margin-left, margin-top;
+  transition-property: width, height, margin-left, margin-top;
+  -webkit-transition-duration: 2s;
+          transition-duration: 2s;
+  position: fixed;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
+  background-color: red;
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  top: 150px;
+  left: 150px;
+}
+
+[data-animated-container] .message-ball {
+  font-size: 20px;
+  line-height: 200px;
+  text-align: center;
+}
+/*# sourceMappingURL=animatedCercle.css.map */
