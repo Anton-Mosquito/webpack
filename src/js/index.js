@@ -70,3 +70,5 @@ import "./ES6,ES7,ES8+/1 - let,const";
 import "./pop_up/pop_up";
 import "./Curry/curry";
 import "./custom bind, call, apply/bind";
+import "./18_ways_to_shorten_your_code/index";
+import "./tree/tree";

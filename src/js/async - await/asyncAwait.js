@@ -1,5 +1,3 @@
-const { functions } = require("lodash");
-
 const delay = (ms) => {
   return new Promise((resolve) => setTimeout(() => resolve(), ms));
 };
@@ -19,4 +17,16 @@ async function fetchAsyncAwait() {
   }
 }
 
-fetchAsyncAwait();
+// fetchAsyncAwait();
+
+const fetchProducts = () => Promise.resolve({ data: [1, 2, 3] });
+const fetchAdditional = (products) => Promise.resolve({ data: [2, 3, 4] });
+
+const getProducts = async () => {
+  const products = await fetchProducts();
+  if (!products.data.length) {
+    return products.data;
+  }
+  return await fetchAdditional(products.data);
+};
+getProducts();
