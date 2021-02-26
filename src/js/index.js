@@ -72,3 +72,4 @@ import "./Curry/curry";
 import "./custom bind, call, apply/bind";
 import "./18_ways_to_shorten_your_code/index";
 import "./tree/tree";
+import "./tree/tree2";

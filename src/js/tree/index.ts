@@ -55,7 +55,7 @@ interface TreeNode {
     children?: Array<TreeNode> 
 }
 
-const treeNodeList: Array<TreeNode>= flatNodeList.map((flatNode: FlatNode) :TreeNode =>({
+const treeNodeList: Array<TreeNode>= flatNodeList.map((flatNode: FlatNode): TreeNode =>({
     ...flatNode,
     children: []
 })).reduce((acc: Array<TreeNode>, treeNode: TreeNode): Array<TreeNode> => {
